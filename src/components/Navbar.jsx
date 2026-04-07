@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiChevronDown, HiMenu, HiX } from "react-icons/hi";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
@@ -9,21 +10,45 @@ export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
+    const [mobileActiveDropdown, setMobileActiveDropdown] = useState(null);
 
     const navLinks = [
-        { label: t("navbar.home"), href: "#home" },
-        { label: t("navbar.aboutUs"), href: "#about" },
+        { label: t("navbar.home"), href: "/#home" },
+        { 
+            label: t("navbar.aboutUs"), 
+            dropdown: [
+                { label: t("aboutPages.ourStory"), href: "/about/our-story", isRoute: true },
+                { label: t("aboutPages.missionVision"), href: "/about/mission-vision", isRoute: true },
+                { label: t("aboutPages.leadership"), href: "/about/leadership", isRoute: true },
+            ]
+        },
+        {
+            label: t("navbar.legacy"),
+            dropdown: [
+                { label: t("legacyPages.timeline"), href: "/legacy/timeline", isRoute: true },
+                { label: t("legacyPages.founders"), href: "/legacy/founders", isRoute: true },
+                { label: t("legacyPages.archives"), href: "/legacy/archives", isRoute: true },
+            ]
+        },
         {
             label: t("navbar.campaign"),
-            href: "#campaign",
-            dropdown: [t("navbar.cleanAir"), t("navbar.oceanSave"), t("navbar.treePlanting")],
+            href: "/#campaign",
+            dropdown: [
+                { label: t("navbar.cleanAir"), href: "/#clean-air" },
+                { label: t("navbar.oceanSave"), href: "/#ocean-save" },
+                { label: t("navbar.treePlanting"), href: "/#tree-planting" },
+            ],
         },
         {
             label: t("navbar.pages"),
-            href: "#pages",
-            dropdown: [t("navbar.blog"), t("navbar.events"), t("navbar.gallery")],
+            href: "/#pages",
+            dropdown: [
+                { label: t("navbar.blog"), href: "/#blog" },
+                { label: t("navbar.events"), href: "/#events" },
+                { label: t("navbar.gallery"), href: "/#gallery" },
+            ],
         },
-        { label: t("navbar.contactUs"), href: "#contact" },
+        { label: t("navbar.contactUs"), href: "/#contact" },
     ];
 
     useEffect(() => {
@@ -31,6 +56,14 @@ export default function Navbar() {
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
+
+    const toggleMobileDropdown = (label) => {
+        if (mobileActiveDropdown === label) {
+            setMobileActiveDropdown(null);
+        } else {
+            setMobileActiveDropdown(label);
+        }
+    };
 
     return (
         <motion.nav
@@ -42,7 +75,7 @@ export default function Navbar() {
         >
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
                 {/* Logo */}
-                <a href="#home" className="flex items-center gap-3">
+                <a href="/#home" className="flex items-center gap-3">
                     <img
                         src="/logo/WhatsApp Image 2026-04-02 at 3.55.48 PM.jpeg"
                         alt="भारतीय गोर्खा सेवा समाज"
@@ -67,18 +100,32 @@ export default function Navbar() {
                             onMouseEnter={() => link.dropdown && setActiveDropdown(link.label)}
                             onMouseLeave={() => setActiveDropdown(null)}
                         >
-                            <a
-                                href={link.href}
-                                className="flex items-center gap-1 text-sm font-medium text-white/90 hover:text-orange transition-colors duration-200"
-                            >
-                                {link.label}
-                                {link.dropdown && (
-                                    <HiChevronDown
-                                        className={`transition-transform duration-200 ${activeDropdown === link.label ? "rotate-180" : ""
-                                            }`}
-                                    />
-                                )}
-                            </a>
+                            {link.href ? (
+                                <a
+                                    href={link.href}
+                                    className="flex items-center gap-1 text-sm font-medium text-white/90 hover:text-orange transition-colors duration-200"
+                                >
+                                    {link.label}
+                                    {link.dropdown && (
+                                        <HiChevronDown
+                                            className={`transition-transform duration-200 ${activeDropdown === link.label ? "rotate-180" : ""
+                                                }`}
+                                        />
+                                    )}
+                                </a>
+                            ) : (
+                                <button
+                                    className="flex items-center gap-1 text-sm font-medium text-white/90 hover:text-orange transition-colors duration-200 focus:outline-none"
+                                >
+                                    {link.label}
+                                    {link.dropdown && (
+                                        <HiChevronDown
+                                            className={`transition-transform duration-200 ${activeDropdown === link.label ? "rotate-180" : ""
+                                                }`}
+                                        />
+                                    )}
+                                </button>
+                            )}
 
                             <AnimatePresence>
                                 {link.dropdown && activeDropdown === link.label && (
@@ -87,16 +134,25 @@ export default function Navbar() {
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: 8 }}
                                         transition={{ duration: 0.2 }}
-                                        className="absolute top-full left-0 mt-2 w-44 bg-white shadow-xl rounded-lg py-2 border border-gray-100"
+                                        className="absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg py-2 border border-gray-100"
                                     >
                                         {link.dropdown.map((item) => (
-                                            <li key={item}>
-                                                <a
-                                                    href="#"
-                                                    className="block px-4 py-2 text-sm text-gray-600 hover:text-orange hover:bg-orange/5 transition-colors"
-                                                >
-                                                    {item}
-                                                </a>
+                                            <li key={item.label}>
+                                                {item.isRoute ? (
+                                                    <Link
+                                                        to={item.href}
+                                                        className="block px-4 py-2 text-sm text-gray-600 hover:text-orange hover:bg-orange/5 transition-colors"
+                                                    >
+                                                        {item.label}
+                                                    </Link>
+                                                ) : (
+                                                    <a
+                                                        href={item.href}
+                                                        className="block px-4 py-2 text-sm text-gray-600 hover:text-orange hover:bg-orange/5 transition-colors"
+                                                    >
+                                                        {item.label}
+                                                    </a>
+                                                )}
                                             </li>
                                         ))}
                                     </motion.ul>
@@ -106,17 +162,9 @@ export default function Navbar() {
                     ))}
                 </ul>
 
-                {/* Right side: Language + Donate */}
+                {/* Right side: Language */}
                 <div className="hidden lg:flex items-center gap-4">
                     <LanguageSwitcher />
-                    <motion.a
-                        href="#donate"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.97 }}
-                        className="inline-flex items-center bg-orange text-white px-6 py-3 rounded font-semibold text-sm uppercase tracking-wider hover:bg-orange-light transition-colors duration-200"
-                    >
-                        {t("navbar.donate")}
-                    </motion.a>
                 </div>
 
                 {/* Mobile: Language + Toggle */}
@@ -143,24 +191,73 @@ export default function Navbar() {
                         <ul className="px-6 py-4 space-y-3">
                             {navLinks.map((link) => (
                                 <li key={link.label}>
-                                    <a
-                                        href={link.href}
-                                        className="block text-sm font-medium text-white/90 hover:text-orange py-1"
-                                        onClick={() => setMobileOpen(false)}
-                                    >
-                                        {link.label}
-                                    </a>
+                                    <div className="flex items-center justify-between">
+                                        {link.href ? (
+                                            <a
+                                                href={link.href}
+                                                className="block text-sm font-medium text-white/90 hover:text-orange py-1 w-full"
+                                                onClick={() => {
+                                                    if (!link.dropdown) setMobileOpen(false);
+                                                }}
+                                            >
+                                                {link.label}
+                                            </a>
+                                        ) : (
+                                            <button
+                                                className="block text-sm font-medium text-white/90 hover:text-orange py-1 w-full text-left focus:outline-none"
+                                                onClick={() => toggleMobileDropdown(link.label)}
+                                            >
+                                                {link.label}
+                                            </button>
+                                        )}
+                                        {link.href && link.dropdown && (
+                                            <button
+                                                onClick={() => toggleMobileDropdown(link.label)}
+                                                className="p-1 text-white/70 hover:text-orange"
+                                            >
+                                                <HiChevronDown
+                                                    className={`transition-transform duration-200 ${mobileActiveDropdown === link.label ? "rotate-180" : ""
+                                                        }`}
+                                                />
+                                            </button>
+                                        )}
+                                    </div>
+
+                                    {/* Mobile Dropdown */}
+                                    <AnimatePresence>
+                                        {link.dropdown && mobileActiveDropdown === link.label && (
+                                            <motion.ul
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: "auto", opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                className="pl-4 mt-2 space-y-2 border-l border-white/10"
+                                            >
+                                                {link.dropdown.map((item) => (
+                                                    <li key={item.label}>
+                                                        {item.isRoute ? (
+                                                            <Link
+                                                                to={item.href}
+                                                                className="block text-sm text-white/70 hover:text-orange py-1"
+                                                                onClick={() => setMobileOpen(false)}
+                                                            >
+                                                                {item.label}
+                                                            </Link>
+                                                        ) : (
+                                                            <a
+                                                                href={item.href}
+                                                                className="block text-sm text-white/70 hover:text-orange py-1"
+                                                                onClick={() => setMobileOpen(false)}
+                                                            >
+                                                                {item.label}
+                                                            </a>
+                                                        )}
+                                                    </li>
+                                                ))}
+                                            </motion.ul>
+                                        )}
+                                    </AnimatePresence>
                                 </li>
                             ))}
-
-                            <li>
-                                <a
-                                    href="#donate"
-                                    className="inline-block bg-orange text-white px-5 py-2 rounded text-sm font-semibold uppercase"
-                                >
-                                    {t("navbar.donate")}
-                                </a>
-                            </li>
                         </ul>
                     </motion.div>
                 )}

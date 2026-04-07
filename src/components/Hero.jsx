@@ -86,14 +86,24 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
+                    className="flex flex-wrap items-center justify-center gap-4"
                 >
                     <motion.a
-                        href="#campaign"
-                        whileHover={{ scale: 1.06 }}
-                        whileTap={{ scale: 0.97 }}
-                        className="inline-block bg-orange text-white px-10 py-4 rounded font-semibold text-sm uppercase tracking-widest hover:bg-orange-light transition-colors duration-200 shadow-lg"
+                        href="#join"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="bg-orange text-white px-6 py-3 rounded font-semibold text-sm uppercase tracking-widest hover:bg-orange-light transition-all duration-300 shadow-lg hover:shadow-orange/30"
                     >
-                        {t("hero.joinCampaign")}
+                        {t("hero.joinCommunity")}
+                    </motion.a>
+                    
+                    <motion.a
+                        href="#donate"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded font-semibold text-sm uppercase tracking-widest hover:bg-white/20 transition-all duration-300 shadow-lg"
+                    >
+                        {t("hero.supportDonate")}
                     </motion.a>
                 </motion.div>
             </div>

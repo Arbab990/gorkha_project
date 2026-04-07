@@ -2,6 +2,7 @@
   "navbar": {
     "home": "Home",
     "aboutUs": "About Us",
+    "legacy": "Legacy",
     "campaign": "Campaign",
     "pages": "Pages",
     "contactUs": "Contact Us",
@@ -14,11 +15,12 @@
     "gallery": "Gallery"
   },
   "hero": {
-    "heading1": "Empowering The Gorkha",
-    "heading2": "Community",
-    "heading3": "For A Brighter Future",
+    "heading1": "Serving the",
+    "heading2": "Gorkha Community",
+    "heading3": "Since 1968.",
     "description": "Dedicated to the welfare, cultural preservation, and upliftment of the Gorkha community across India. Let's unite to build a stronger tomorrow.",
-    "joinCampaign": "Become a Member"
+    "joinCommunity": "Join the Community",
+    "supportDonate": "Support / Donate"
   },
   "features": {
     "heading": "Unite for Our Heritage.",
@@ -63,11 +65,85 @@
     "viewMore": "View More"
   },
   "newsletter": {
-    "keepUpdated": "Keep Updated",
-    "newsletter": "Newsletter",
-    "emailPlaceholder": "Email",
-    "subscribe": "Subscribe",
-    "subscribed": "Subscribed!"
+    "title": "Subscribe To Newsletter",
+    "description": "Stay updated with our latest initiatives, relief programs, and stories of community impact.",
+    "placeholder": "Email Address",
+    "button": "Subscribe"
+  },
+  "aboutPages": {
+    "ourStory": "Our Story",
+    "ourStoryTitle": "Our Story",
+    "missionVision": "Mission & Vision",
+    "missionVisionTitle": "Mission & Vision",
+    "leadership": "Leadership / Committee",
+    "leadershipTitle": "Leadership / Committee"
+  },
+  "legacyPages": {
+    "timeline": "Timeline",
+    "timelineTitle": "Timeline",
+    "timelineEvents": [
+      { "year": "1968", "title": "Recognition of Nepali Language", "desc": "Marked the early acknowledgment of Gorkha linguistic identity, strengthening cultural roots in regions like Darjeeling." },
+      { "year": "1986", "title": "Gorkhaland Movement", "desc": "A defining mass movement asserting identity, dignity, and the demand for political recognition." },
+      { "year": "1988", "title": "Formation of DGHC", "desc": "First structured administrative setup giving Gorkhas partial self-governance." },
+      { "year": "1992", "title": "Included in the Constitution", "desc": "Inclusion in the Eighth Schedule gave national recognition to the Nepali language and strengthened Gorkha identity across India." },
+      { "year": "2011", "title": "Establishment of GTA", "desc": "Enhanced administrative powers and governance structure replacing DGHC." },
+      { "year": "Present", "title": "Community & Digital Unity", "desc": "Organizations like Bhartiya Gorkha Seva Samaj actively working on education, cultural preservation, social welfare, and digital networking." }
+    ],
+    "founders": "Founders & Senior Members",
+    "foundersTitle": "Founders & Senior Members",
+    "foundersSubtitle": "Respected founders and senior members guiding the path toward a stronger, united Gorkha community.",
+    "archives": "Archives",
+    "archivesTitle": "Archives"
+  },
+  "ourStoryPage": {
+    "title": "Our Story – Bhartiya Gorkha Seva Samaj",
+    "spiritTitle": "The Spirit of the Gorkha",
+    "spiritText": "From the quiet hills of the Himalayas to towns and cities across India, the Gorkha spirit has always carried courage, humility, and dignity. For generations, Gorkhas have served society with honesty and dedication — as soldiers, teachers, workers, farmers, professionals, and caregivers. Often quietly, without seeking recognition, but always with pride in who we are.",
+    "needTitle": "The Need for Connection",
+    "needText": "As times change, many Gorkhas now live far from their roots. Families are scattered. Young generations grow up without knowing the stories that shaped them. Slowly, connections fade. There is a growing need to reconnect and preserve this identity.",
+    "beginningTitle": "Bhartiya Gorkha Seva Samaj was created to reconnect those threads.",
+    "beginningText": "Bhartiya Gorkha Seva Samaj was created to bring the community together—uniting Gorkhas across India on a shared platform of support, culture, and progress.",
+    "standForTitle": "What We Stand For",
+    "standFor1": "Preserving culture and traditions",
+    "standFor2": "Supporting education and youth",
+    "standFor3": "Empowering women and families",
+    "standFor4": "Strengthening community welfare",
+    "standFor5": "Promoting unity and identity",
+    "lookingAheadTitle": "Looking Ahead",
+    "lookingAheadText": "We believe a connected community is a strong community. Our goal is to preserve our heritage while moving forward with confidence and opportunity.",
+    "invitationTitle": "An Open Invitation",
+    "invitationText": "Whether you are a student, professional, elder, or well-wisher— Bhartiya Gorkha Seva Samaj welcomes you."
+  },
+  "missionVisionPage": {
+    "title": "Mission & Vision",
+    "missionTitle": "Our Mission",
+    "missionLead": "Bhartiya Gorkha Seva Samaj is committed to strengthening the Gorkha community by providing meaningful support in everyday life while preserving our cultural identity. Our mission is to:",
+    "missionPoint1": "Offer medical assistance to ensure health and well-being within the community",
+    "missionPoint2": "Support families through marriage assistance, promoting stability and unity",
+    "missionPoint3": "Encourage academic excellence through student recognition and motivation",
+    "missionPoint4": "Preserve and promote heritage through cultural activities and traditions",
+    "missionEnd": "We aim to build a supportive ecosystem where every individual feels valued, connected, and empowered.",
+    "visionTitle": "Our Vision",
+    "visionLead": "To create a united, self-reliant, and culturally proud Gorkha community that thrives across generations. We envision a future where:",
+    "visionPoint1": "No member of the community is left without support in times of need",
+    "visionPoint2": "Youth are motivated, recognized, and guided toward success",
+    "visionPoint3": "Traditions and cultural values are preserved and celebrated",
+    "visionPoint4": "Strong community bonds continue to grow despite changing times"
+  },
+  "leadershipPage": {
+    "title": "Leadership & Committee",
+    "sectionTitle": "The People Behind Bhartiya Gorkha Seva Samaj",
+    "sectionSubtitle": "Dedicated individuals working together to build a stronger, united Gorkha community.",
+    "leaders": [
+      { "initials": "AG", "name": "Amrit Gurung", "role": "Founder & Product Architect", "desc": "Leads the vision, product strategy, technology roadmap, and overall execution of the platform." },
+      { "initials": "SK", "name": "Shabi Ata Khan", "role": "Co-Founder & Business Strategy Lead", "desc": "Oversees business strategy, partnerships, governance, and long-term sustainability planning." },
+      { "initials": "IG", "name": "Indra Bahadur Gurung", "role": "Senior Community Advisor", "desc": "Provides guidance on discipline, integrity, and community values, and advises on outreach to veterans and elders." },
+      { "initials": "VT", "name": "Ved Bahadur Thapa", "role": "Community Advisor & NGO Liaison", "desc": "Acts as a bridge between traditional Gorkha NGOs and the digital platform, offering decades of community leadership insight." },
+      { "initials": "JT", "name": "Jagrit Raj Thapa", "role": "Community Coordination Associate", "desc": "Supports community coordination, grassroots engagement, and communication with local Gorkha groups." },
+      { "initials": "PB", "name": "Puran Bahadur Bisht", "role": "Education & Youth Advisor", "desc": "Advises on education, youth development initiatives, and learning-focused content for the community." },
+      { "initials": "ST", "name": "Sangeeta Thapa", "role": "Women Community Advisor", "desc": "Provides advisory input on women's participation, community needs, and inclusivity, and supports planning for future women-focused initiatives." },
+      { "initials": "RG", "name": "Ruchi Gurung", "role": "Women Engagement Coordinator", "desc": "Represents women and family perspectives and supports inclusive community participation and engagement." }
+    ]
   },
   "footer": {
     "brandDesc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
