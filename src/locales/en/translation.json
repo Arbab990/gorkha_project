@@ -1,0 +1,91 @@
+{
+  "navbar": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "campaign": "Campaign",
+    "pages": "Pages",
+    "contactUs": "Contact Us",
+    "donate": "Donate",
+    "cleanAir": "Clean Air",
+    "oceanSave": "Ocean Save",
+    "treePlanting": "Tree Planting",
+    "blog": "Blog",
+    "events": "Events",
+    "gallery": "Gallery"
+  },
+  "hero": {
+    "heading1": "Empowering The Gorkha",
+    "heading2": "Community",
+    "heading3": "For A Brighter Future",
+    "description": "Dedicated to the welfare, cultural preservation, and upliftment of the Gorkha community across India. Let's unite to build a stronger tomorrow.",
+    "joinCampaign": "Become a Member"
+  },
+  "features": {
+    "heading": "Unite for Our Heritage.",
+    "headingLine2": "Empower Our Future.",
+    "description": "We are dedicated to preserving our rich cultural legacy, fostering unity, and securing a prosperous future for the Gorkha community.",
+    "card1Title": "Education and Literacy",
+    "card1Desc": "Providing educational support and resources to empower our youth and build a knowledgeable community.",
+    "card2Title": "Cultural Preservation",
+    "card2Desc": "Organizing events to celebrate and promote Gorkha traditions, language, art, and vibrant heritage.",
+    "card3Title": "Community Support",
+    "card3Desc": "Creating a strong support network to assist members of the community in their social and economic upliftment."
+  },
+  "story": {
+    "heading": "The Story Behind Of Our Movement",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+    "education": "Education",
+    "campaign": "Campaign",
+    "environmental": "Environmental",
+    "advocation": "Advocation",
+    "readMore": "Read More",
+    "watchVideo": "Watch Video"
+  },
+  "partners": {
+    "heading": "Collaborated Partner",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.",
+    "sloganHere": "Slogan Here"
+  },
+  "stats": {
+    "heading": "We Take Action. To Make Better Changes",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "treesPlant": "Registered Members",
+    "caseSolved": "Case Solved",
+    "youngVolunteer": "Young Volunteer",
+    "volunteersAlt": "Volunteers planting"
+  },
+  "priorities": {
+    "heading": "Our Key Priorities",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.",
+    "treePlanting": "Tree Planting",
+    "recycling": "Recycling",
+    "beachCleanup": "Beach Cleanup",
+    "viewMore": "View More"
+  },
+  "newsletter": {
+    "keepUpdated": "Keep Updated",
+    "newsletter": "Newsletter",
+    "emailPlaceholder": "Email",
+    "subscribe": "Subscribe",
+    "subscribed": "Subscribed!"
+  },
+  "footer": {
+    "brandDesc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+    "quickLinks": "Quick Links",
+    "otherPages": "Other Pages",
+    "contactInfo": "Contact Info",
+    "home": "Home",
+    "aboutUs": "About Us",
+    "destination": "Destination",
+    "contact": "Contact",
+    "privacyPolicy": "Privacy & Policy",
+    "termsOfUse": "Terms of Use",
+    "disclaimer": "Disclaimer",
+    "faq": "FAQ",
+    "address": "Jl. Raya Mas Ubud No.88, Gianyar, Bali, Indonesia - 80571",
+    "phone": "+62 361 154874",
+    "email": "contact@domain.com",
+    "bottomText1": "Environmental & NGO Template by EcoPeace",
+    "bottomText2": "Copyright 2024. All rights reserved."
+  }
+}

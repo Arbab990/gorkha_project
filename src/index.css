@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-orange: #F26522;
+  --color-orange-light: #FF8C42;
+  --color-green-dark: #1A3C2E;
+  --color-green: #2D6A4F;
+
+  --font-heading: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+/* Base styles */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "DM Sans", sans-serif;
+    color: #1a1a1a;
+    background: #ffffff;
+  }
+}
