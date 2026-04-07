@@ -4,10 +4,10 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { useTranslation } from "react-i18next";
 
 const slides = [
-    "/images/beautiful-scenery-mountainous-landscape-covered-with-snow-cloudy-sky.jpg",
-    "/images/pexels-chandan-thapa-3746720-5569095.jpg",
-    "/images/pexels-micklatter-15519578.jpg",
-    "/images/pexels-prabin-adhikari-1090022431-20651038.jpg",
+    { url: "/images/beautiful-scenery-mountainous-landscape-covered-with-snow-cloudy-sky.jpg", position: "center" },
+    { url: "/images/pexels-micklatter-31540737.jpg", position: "center" },
+    { url: "/images/pexels-micklatter-15519578.jpg", position: "center 20%" },
+    { url: "/images/pexels-prabin-adhikari-1090022431-20651038.jpg", position: "center" },
 ];
 
 const AUTOPLAY_INTERVAL = 5000;
@@ -52,9 +52,10 @@ export default function Hero() {
                     animate="center"
                     exit="exit"
                     transition={{ duration: 0.8, ease: "easeInOut" }}
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    className="absolute inset-0 bg-cover bg-no-repeat transition-all duration-700"
                     style={{
-                        backgroundImage: `url('${slides[current]}')`,
+                        backgroundImage: `url('${slides[current].url}')`,
+                        backgroundPosition: slides[current].position,
                     }}
                 />
             </AnimatePresence>
