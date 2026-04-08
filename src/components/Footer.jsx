@@ -95,9 +95,17 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10 py-5 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-white/40 text-xs">
-          <p>{t("footer.bottomText1")}</p>
-          <p>{t("footer.bottomText2")}</p>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3 text-white/70 text-sm">
+          <p>© 2025 Onebigbit Technologies Pvt. Ltd. | All Rights Reserved.</p>
+          <div className="flex items-center gap-4">
+            <a href="#" className="hover:text-white transition-colors">
+              Privacy Policy
+            </a>
+            <span className="text-white/40">|</span>
+            <a href="#" className="hover:text-white transition-colors">
+              Terms &amp; Conditions
+            </a>
+          </div>
         </div>
       </div>
     </footer>
