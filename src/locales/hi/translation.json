@@ -15,7 +15,8 @@
     "treePlanting": "वृक्षारोपण",
     "blog": "ब्लॉग",
     "events": "कार्यक्रम",
-    "gallery": "गैलरी"
+    "gallery": "गैलरी",
+    "introduction": "परिचय"
   },
   "hero": {
     "heading1": "1968 से",
@@ -51,6 +52,29 @@
     "description": "हमारी नवीनतम पहलों, राहत कार्यक्रमों और सामुदायिक प्रभाव की कहानियों से अपडेट रहें।",
     "placeholder": "ईमेल पता",
     "button": "सब्सक्राइब करें"
+  },
+  "testimonials": {
+    "heading": "अनुभव",
+    "items": [
+      {
+        "text": "जब मुझे ज़मीन के दस्तावेज़ों में मदद की ज़रूरत पड़ी, तब OneGorkha की लीगल टीम ने पूरी प्रक्रिया में बिना किसी शुल्क के मेरा मार्गदर्शन किया।",
+        "name": "Karma Sherpa",
+        "location": "Darjeeling, West Bengal",
+        "badge": "कानूनी सहायता"
+      },
+      {
+        "text": "OneGorkha के माध्यम से मैंने जो सिलाई कोर्स किया, उसने मुझे अपना छोटा व्यवसाय शुरू करने में मदद की। अब मैं आर्थिक रूप से आत्मनिर्भर हूँ।",
+        "name": "Sunita Gurung",
+        "location": "Dehradun, Uttarakhand",
+        "badge": "कौशल विकास"
+      },
+      {
+        "text": "Digital Gorkha ID की वजह से सेवाओं तक पहुँचना और अपनी पहचान सिद्ध करना मेरे लिए बहुत आसान हो गया है। मुझे इस पहल का हिस्सा होने पर गर्व है।",
+        "name": "Rajesh Thapa",
+        "location": "Mumbai, Maharashtra",
+        "badge": "डिजिटल गोरखा आईडी"
+      }
+    ]
   },
   "aboutPages": {
     "ourStory": "हमारी कहानी",

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Stethoscope, HeartHandshake, GraduationCap, Palette } from "lucide-react";
+import { HeartPulse, HeartHandshake, GraduationCap, Palette } from "lucide-react";
 
 export default function OurWorkOverview() {
     const { t } = useTranslation();
@@ -11,7 +11,7 @@ export default function OurWorkOverview() {
             defaultLabel: "Medical Assistance",
             descriptionKey: "workOverview.medicalDesc",
             defaultDesc: "Providing essential healthcare resources and medical aid to those in need.",
-            icon: Stethoscope,
+            icon: HeartPulse,
             color: "bg-blue-50 text-blue-600",
         },
         {

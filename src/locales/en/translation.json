@@ -73,6 +73,29 @@
     "placeholder": "Email Address",
     "button": "Subscribe"
   },
+  "testimonials": {
+    "heading": "Testimonials",
+    "items": [
+      {
+        "text": "When I needed help with land documentation, OneGorkha's legal team guided me through the entire process free of cost.",
+        "name": "Karma Sherpa",
+        "location": "Darjeeling, West Bengal",
+        "badge": "Legal Support"
+      },
+      {
+        "text": "The tailoring course I attended through OneGorkha has helped me start my own small business. I'm now financially independent.",
+        "name": "Sunita Gurung",
+        "location": "Dehradun, Uttarakhand",
+        "badge": "Skill Development"
+      },
+      {
+        "text": "The Digital Gorkha ID has made it so much easier for me to access services and prove my identity. I'm proud to be part of this initiative.",
+        "name": "Rajesh Thapa",
+        "location": "Mumbai, Maharashtra",
+        "badge": "Digital Gorkha ID"
+      }
+    ]
+  },
   "aboutPages": {
     "ourStory": "Our Story",
     "ourStoryTitle": "Our Story",

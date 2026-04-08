@@ -73,6 +73,29 @@
     "placeholder": "इमेल ठेगाना",
     "button": "सदस्यता लिनुहोस्"
   },
+  "testimonials": {
+    "heading": "अनुभवहरू",
+    "items": [
+      {
+        "text": "जग्गाका कागजातसम्बन्धी मद्दत चाहिएको बेला OneGorkha को कानुनी टोलीले मलाई पूरा प्रक्रियाभरि निःशुल्क मार्गदर्शन गर्‍यो।",
+        "name": "Karma Sherpa",
+        "location": "Darjeeling, West Bengal",
+        "badge": "कानुनी सहयोग"
+      },
+      {
+        "text": "OneGorkha मार्फत लिएको सिलाइ तालिमले मलाई आफ्नै सानो व्यवसाय सुरु गर्न मद्दत गर्‍यो। अहिले म आर्थिक रूपमा आत्मनिर्भर छु।",
+        "name": "Sunita Gurung",
+        "location": "Dehradun, Uttarakhand",
+        "badge": "सीप विकास"
+      },
+      {
+        "text": "Digital Gorkha ID ले मलाई सेवाहरू प्राप्त गर्न र आफ्नै पहिचान प्रमाणित गर्न धेरै सजिलो बनाइदिएको छ। यस पहलको हिस्सा हुन पाउँदा मलाई गर्व लाग्छ।",
+        "name": "Rajesh Thapa",
+        "location": "Mumbai, Maharashtra",
+        "badge": "डिजिटल गोरखा आईडी"
+      }
+    ]
+  },
   "aboutPages": {
     "ourStory": "हाम्रो कथा",
     "ourStoryTitle": "हाम्रो कथा",

@@ -5,26 +5,7 @@ import { useTranslation } from "react-i18next";
 export default function Testimonials() {
     const { t } = useTranslation();
 
-    const testimonialsData = [
-        {
-            text: "When I needed help with land documentation, OneGorkha's legal team guided me through the entire process free of cost.",
-            name: "Karma Sherpa",
-            location: "Darjeeling, West Bengal",
-            badge: "Legal Support"
-        },
-        {
-            text: "The tailoring course I attended through OneGorkha has helped me start my own small business. I'm now financially independent.",
-            name: "Sunita Gurung",
-            location: "Dehradun, Uttarakhand",
-            badge: "Skill Development"
-        },
-        {
-            text: "The Digital Gorkha ID has made it so much easier for me to access services and prove my identity. I'm proud to be part of this initiative.",
-            name: "Rajesh Thapa",
-            location: "Mumbai, Maharashtra",
-            badge: "Digital Gorkha ID"
-        }
-    ];
+    const testimonialsData = t("testimonials.items", { returnObjects: true });
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -52,7 +33,7 @@ export default function Testimonials() {
                         transition={{ duration: 0.6 }}
                         className="text-sm font-semibold text-orange uppercase tracking-wider mb-6"
                     >
-                        Testimonials
+                        {t("testimonials.heading")}
                     </motion.h2>
                     <motion.div
                         initial={{ scaleX: 0 }}
@@ -71,7 +52,7 @@ export default function Testimonials() {
                     viewport={{ once: true, margin: "-100px" }}
                     className="grid grid-cols-1 lg:grid-cols-3 gap-8"
                 >
-                    {testimonialsData.map((item, index) => (
+                    {Array.isArray(testimonialsData) && testimonialsData.map((item, index) => (
                         <motion.div
                             key={index}
                             variants={itemVariants}
@@ -85,7 +66,7 @@ export default function Testimonials() {
 
                             {/* Testimonial Text */}
                             <p className="text-gray-600 font-body text-base italic leading-relaxed mb-6 flex-1">
-                                "{item.text}"
+                                &quot;{item.text}&quot;
                             </p>
 
                             {/* Stars */}
