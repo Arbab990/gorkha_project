@@ -3,9 +3,12 @@
     "home": "मुख्य पृष्ठ",
     "aboutUs": "हमारे बारे में",
     "legacy": "विरासत",
+    "ourWork": "हमारा कार्य",
+    "getInvolved": "शामिल हों",
+    "events": "कार्यक्रम",
     "campaign": "अभियान",
     "pages": "पृष्ठ",
-    "contactUs": "संपर्क करें",
+    "contactUs": "संपर्क",
     "donate": "दान करें",
     "cleanAir": "स्वच्छ वायु",
     "oceanSave": "समुद्र बचाओ",
@@ -73,6 +76,39 @@
     "foundersSubtitle": "एक मजबूत, एकजुट गोरखा समुदाय की दिशा में मार्गदर्शन करने वाले सम्मानित संस्थापक और वरिष्ठ सदस्य।",
     "archives": "पुरालेख (Archives)",
     "archivesTitle": "पुरालेख"
+  },
+  "workPages": {
+    "communitySupport": "सामुदायिक सहायता",
+    "communitySupportTitle": "सामुदायिक सहायता",
+    "medicalAssistance": "चिकित्सा सहायता",
+    "medicalAssistanceTitle": "चिकित्सा सहायता",
+    "marriageSupport": "विवाह सहायता",
+    "marriageSupportTitle": "विवाह सहायता",
+    "studentRecognition": "छात्र मान्यता",
+    "studentRecognitionTitle": "छात्र मान्यता",
+    "culturalActivities": "सांस्कृतिक गतिविधियाँ",
+    "culturalActivitiesTitle": "सांस्कृतिक गतिविधियाँ"
+  },
+  "galleryPage": {
+    "galleryTitle": "गैलरी"
+  },
+  "newsPage": {
+    "newsTitle": "समाचार"
+  },
+  "donatePage": {
+    "donateTitle": "दान करें"
+  },
+  "involvedPages": {
+    "becomeMember": "सदस्य बनें",
+    "becomeMemberTitle": "सदस्य बनें",
+    "volunteer": "स्वयंसेवक",
+    "volunteerTitle": "स्वयंसेवक"
+  },
+  "eventPages": {
+    "upcomingEvents": "आगामी कार्यक्रम",
+    "upcomingEventsTitle": "आगामी कार्यक्रम",
+    "pastEvents": "पिछले कार्यक्रम",
+    "pastEventsTitle": "पिछले कार्यक्रम"
   },
   "ourStoryPage": {
     "title": "हमारी कहानी - भारतीय गोरखा सेवा समाज",

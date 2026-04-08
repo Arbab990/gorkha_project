@@ -3,9 +3,12 @@
     "home": "गृह पृष्ठ",
     "aboutUs": "हाम्रो बारेमा",
     "legacy": "विरासत",
+    "ourWork": "हाम्रो कार्य",
+    "getInvolved": "संलग्न हुनुहोस्",
+    "events": "कार्यक्रमहरू",
     "campaign": "अभियान",
     "pages": "पृष्ठहरू",
-    "contactUs": "सम्पर्क गर्नुहोस्",
+    "contactUs": "सम्पर्क",
     "donate": "दान गर्नुहोस्",
     "cleanAir": "स्वच्छ हावा",
     "oceanSave": "समुद्र बचाऊ",
@@ -94,6 +97,39 @@
     "foundersSubtitle": "एक बलियो, एकजुट गोर्खा समुदायतर्फ मार्गनिर्देशन गर्ने सम्मानित संस्थापक र वरिष्ठ सदस्यहरू।",
     "archives": "अभिलेख (Archives)",
     "archivesTitle": "अभिलेख"
+  },
+  "workPages": {
+    "communitySupport": "सामुदायिक सहयोग",
+    "communitySupportTitle": "सामुदायिक सहयोग",
+    "medicalAssistance": "चिकित्सा सहयोग",
+    "medicalAssistanceTitle": "चिकित्सा सहयोग",
+    "marriageSupport": "विवाह सहयोग",
+    "marriageSupportTitle": "विवाह सहयोग",
+    "studentRecognition": "विद्यार्थी मान्यता",
+    "studentRecognitionTitle": "विद्यार्थी मान्यता",
+    "culturalActivities": "सांस्कृतिक गतिविधिहरू",
+    "culturalActivitiesTitle": "सांस्कृतिक गतिविधिहरू"
+  },
+  "galleryPage": {
+    "galleryTitle": "ग्यालेरी"
+  },
+  "newsPage": {
+    "newsTitle": "समाचार"
+  },
+  "donatePage": {
+    "donateTitle": "दान गर्नुहोस्"
+  },
+  "involvedPages": {
+    "becomeMember": "सदस्य बन्नुहोस्",
+    "becomeMemberTitle": "सदस्य बन्नुहोस्",
+    "volunteer": "स्वयंसेवक",
+    "volunteerTitle": "स्वयंसेवक"
+  },
+  "eventPages": {
+    "upcomingEvents": "आगामी कार्यक्रमहरू",
+    "upcomingEventsTitle": "आगामी कार्यक्रमहरू",
+    "pastEvents": "विगतका कार्यक्रमहरू",
+    "pastEventsTitle": "विगतका कार्यक्रमहरू"
   },
   "ourStoryPage": {
     "title": "हाम्रो कथा - भारतीय गोर्खा सेवा समाज",

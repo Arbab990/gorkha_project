@@ -3,9 +3,12 @@
     "home": "Home",
     "aboutUs": "About Us",
     "legacy": "Legacy",
+    "ourWork": "Our Work",
+    "getInvolved": "Get Involved",
+    "events": "Events",
     "campaign": "Campaign",
     "pages": "Pages",
-    "contactUs": "Contact Us",
+    "contactUs": "Contact",
     "donate": "Donate",
     "cleanAir": "Clean Air",
     "oceanSave": "Ocean Save",
@@ -94,6 +97,39 @@
     "foundersSubtitle": "Respected founders and senior members guiding the path toward a stronger, united Gorkha community.",
     "archives": "Archives",
     "archivesTitle": "Archives"
+  },
+  "workPages": {
+    "communitySupport": "Community Support",
+    "communitySupportTitle": "Community Support",
+    "medicalAssistance": "Medical Assistance",
+    "medicalAssistanceTitle": "Medical Assistance",
+    "marriageSupport": "Marriage Support",
+    "marriageSupportTitle": "Marriage Support",
+    "studentRecognition": "Student Recognition",
+    "studentRecognitionTitle": "Student Recognition",
+    "culturalActivities": "Cultural Activities",
+    "culturalActivitiesTitle": "Cultural Activities"
+  },
+  "galleryPage": {
+    "galleryTitle": "Gallery"
+  },
+  "newsPage": {
+    "newsTitle": "News"
+  },
+  "donatePage": {
+    "donateTitle": "Donate"
+  },
+  "involvedPages": {
+    "becomeMember": "Become a Member",
+    "becomeMemberTitle": "Become a Member",
+    "volunteer": "Volunteer",
+    "volunteerTitle": "Volunteer"
+  },
+  "eventPages": {
+    "upcomingEvents": "Upcoming Events",
+    "upcomingEventsTitle": "Upcoming Events",
+    "pastEvents": "Past Events",
+    "pastEventsTitle": "Past Events"
   },
   "ourStoryPage": {
     "title": "Our Story – Bhartiya Gorkha Seva Samaj",

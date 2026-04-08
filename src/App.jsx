@@ -8,6 +8,30 @@ import Leadership from "./pages/Leadership";
 import Timeline from "./pages/Timeline";
 import Founders from "./pages/Founders";
 import Archives from "./pages/Archives";
+
+// Our Work Pages
+import CommunitySupport from "./pages/CommunitySupport";
+import MedicalAssistance from "./pages/MedicalAssistance";
+import MarriageSupport from "./pages/MarriageSupport";
+import StudentRecognition from "./pages/StudentRecognition";
+import CulturalActivities from "./pages/CulturalActivities";
+
+// Event Pages
+import UpcomingEvents from "./pages/UpcomingEvents";
+import PastEvents from "./pages/PastEvents";
+
+// Gallery & News
+import Gallery from "./pages/Gallery";
+import News from "./pages/News";
+
+// Get Involved
+import BecomeMember from "./pages/BecomeMember";
+import Volunteer from "./pages/Volunteer";
+
+// Donate & Contact
+import Donate from "./pages/Donate";
+import Contact from "./pages/Contact";
+
 import ScrollToTop from "./components/ScrollToTop";
 
 function Layout() {
@@ -33,6 +57,29 @@ export default function App() {
           <Route path="legacy/timeline" element={<Timeline />} />
           <Route path="legacy/founders" element={<Founders />} />
           <Route path="legacy/archives" element={<Archives />} />
+
+          {/* Our Work */}
+          <Route path="our-work/community-support" element={<CommunitySupport />} />
+          <Route path="our-work/medical-assistance" element={<MedicalAssistance />} />
+          <Route path="our-work/marriage-support" element={<MarriageSupport />} />
+          <Route path="our-work/student-recognition" element={<StudentRecognition />} />
+          <Route path="our-work/cultural-activities" element={<CulturalActivities />} />
+
+          {/* Events */}
+          <Route path="events/upcoming" element={<UpcomingEvents />} />
+          <Route path="events/past" element={<PastEvents />} />
+
+          {/* Gallery & News */}
+          <Route path="gallery" element={<Gallery />} />
+          <Route path="news" element={<News />} />
+
+          {/* Get Involved */}
+          <Route path="get-involved/become-member" element={<BecomeMember />} />
+          <Route path="get-involved/volunteer" element={<Volunteer />} />
+
+          {/* Donate & Contact */}
+          <Route path="donate" element={<Donate />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
     </BrowserRouter>

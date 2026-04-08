@@ -31,24 +31,49 @@ export default function Navbar() {
             ]
         },
         {
-            label: t("navbar.campaign"),
-            href: "/#campaign",
+            label: t("navbar.ourWork"),
             dropdown: [
-                { label: t("navbar.cleanAir"), href: "/#clean-air" },
-                { label: t("navbar.oceanSave"), href: "/#ocean-save" },
-                { label: t("navbar.treePlanting"), href: "/#tree-planting" },
-            ],
+                { label: t("workPages.communitySupport"), href: "/our-work/community-support", isRoute: true },
+                { label: t("workPages.medicalAssistance"), href: "/our-work/medical-assistance", isRoute: true },
+                { label: t("workPages.marriageSupport"), href: "/our-work/marriage-support", isRoute: true },
+                { label: t("workPages.studentRecognition"), href: "/our-work/student-recognition", isRoute: true },
+                { label: t("workPages.culturalActivities"), href: "/our-work/cultural-activities", isRoute: true },
+            ]
         },
         {
-            label: t("navbar.pages"),
-            href: "/#pages",
+            label: t("navbar.events"),
             dropdown: [
-                { label: t("navbar.blog"), href: "/#blog" },
-                { label: t("navbar.events"), href: "/#events" },
-                { label: t("navbar.gallery"), href: "/#gallery" },
-            ],
+                { label: t("eventPages.upcomingEvents"), href: "/events/upcoming", isRoute: true },
+                { label: t("eventPages.pastEvents"), href: "/events/past", isRoute: true },
+            ]
         },
-        { label: t("navbar.contactUs"), href: "/#contact" },
+        {
+            label: t("navbar.gallery"),
+            href: "/gallery",
+            isRoute: true
+        },
+        {
+            label: t("newsPage.newsTitle") || "News",
+            href: "/news",
+            isRoute: true
+        },
+        {
+            label: t("navbar.getInvolved"),
+            dropdown: [
+                { label: t("involvedPages.becomeMember"), href: "/get-involved/become-member", isRoute: true },
+                { label: t("involvedPages.volunteer"), href: "/get-involved/volunteer", isRoute: true },
+            ]
+        },
+        {
+            label: t("donatePage.donateTitle") || "Donate",
+            href: "/donate",
+            isRoute: true
+        },
+        {
+            label: t("navbar.contactUs"),
+            href: "/contact",
+            isRoute: true
+        },
     ];
 
     useEffect(() => {
@@ -92,7 +117,7 @@ export default function Navbar() {
                 </a>
 
                 {/* Desktop Nav */}
-                <ul className="hidden lg:flex items-center gap-8">
+                <ul className="hidden lg:flex items-center gap-6 xl:gap-8">
                     {navLinks.map((link) => (
                         <li
                             key={link.label}
@@ -101,21 +126,30 @@ export default function Navbar() {
                             onMouseLeave={() => setActiveDropdown(null)}
                         >
                             {link.href ? (
-                                <a
-                                    href={link.href}
-                                    className="flex items-center gap-1 text-sm font-medium text-white/90 hover:text-orange transition-colors duration-200"
-                                >
-                                    {link.label}
-                                    {link.dropdown && (
-                                        <HiChevronDown
-                                            className={`transition-transform duration-200 ${activeDropdown === link.label ? "rotate-180" : ""
-                                                }`}
-                                        />
-                                    )}
-                                </a>
+                                link.isRoute ? (
+                                    <Link
+                                        to={link.href}
+                                        className="flex items-center gap-1 text-[13px] whitespace-nowrap font-medium text-white/90 hover:text-orange transition-colors duration-200"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                ) : (
+                                    <a
+                                        href={link.href}
+                                        className="flex items-center gap-1 text-[13px] whitespace-nowrap font-medium text-white/90 hover:text-orange transition-colors duration-200"
+                                    >
+                                        {link.label}
+                                        {link.dropdown && (
+                                            <HiChevronDown
+                                                className={`transition-transform duration-200 ${activeDropdown === link.label ? "rotate-180" : ""
+                                                    }`}
+                                            />
+                                        )}
+                                    </a>
+                                )
                             ) : (
                                 <button
-                                    className="flex items-center gap-1 text-sm font-medium text-white/90 hover:text-orange transition-colors duration-200 focus:outline-none"
+                                    className="flex items-center gap-1 text-[13px] whitespace-nowrap font-medium text-white/90 hover:text-orange transition-colors duration-200 focus:outline-none"
                                 >
                                     {link.label}
                                     {link.dropdown && (
@@ -193,15 +227,25 @@ export default function Navbar() {
                                 <li key={link.label}>
                                     <div className="flex items-center justify-between">
                                         {link.href ? (
-                                            <a
-                                                href={link.href}
-                                                className="block text-sm font-medium text-white/90 hover:text-orange py-1 w-full"
-                                                onClick={() => {
-                                                    if (!link.dropdown) setMobileOpen(false);
-                                                }}
-                                            >
-                                                {link.label}
-                                            </a>
+                                            link.isRoute ? (
+                                                <Link
+                                                    to={link.href}
+                                                    className="block text-sm font-medium text-white/90 hover:text-orange py-1 w-full"
+                                                    onClick={() => setMobileOpen(false)}
+                                                >
+                                                    {link.label}
+                                                </Link>
+                                            ) : (
+                                                <a
+                                                    href={link.href}
+                                                    className="block text-sm font-medium text-white/90 hover:text-orange py-1 w-full"
+                                                    onClick={() => {
+                                                        if (!link.dropdown) setMobileOpen(false);
+                                                    }}
+                                                >
+                                                    {link.label}
+                                                </a>
+                                            )
                                         ) : (
                                             <button
                                                 className="block text-sm font-medium text-white/90 hover:text-orange py-1 w-full text-left focus:outline-none"
