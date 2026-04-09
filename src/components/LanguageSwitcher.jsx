@@ -36,11 +36,13 @@ export default function LanguageSwitcher() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 text-sm font-medium text-white/90 hover:text-orange transition-colors duration-200"
+        className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm shadow-lg text-sm font-medium text-white hover:text-orange hover:border-orange/40 hover:bg-white/10 transition-all duration-300 group"
       >
-        {currentLang.label}
+        <span className="opacity-90">{currentLang.label}</span>
         <HiChevronDown
-          className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`transition-transform duration-300 ${
+            open ? "rotate-180" : ""
+          } group-hover:text-orange`}
         />
       </button>
 

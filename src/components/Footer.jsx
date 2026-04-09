@@ -96,7 +96,17 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10 py-5 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3 text-white/70 text-sm">
-          <p>© 2025 Onebigbit Technologies Pvt. Ltd. | All Rights Reserved.</p>
+          <p>
+            Copyright © 2026 Bhartiye Gorkha Seva Samaj | Powered By -{" "}
+            <a
+              href="https://onebigbit.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-orange transition-colors"
+            >
+              Onebigbit Technologies Private Limited
+            </a>
+          </p>
           <div className="flex items-center gap-4">
             <a href="#" className="hover:text-white transition-colors">
               Privacy Policy
