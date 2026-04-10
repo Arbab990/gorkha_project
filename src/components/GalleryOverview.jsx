@@ -18,8 +18,13 @@ export default function GalleryOverview() {
         show: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
     };
 
-    // Array of 4 items for the grid
-    const placeholders = [1, 2, 3, 4];
+    // Array of 4 actual images for the grid from public/images
+    const galleryImages = [
+        "/images/image5.jpg",
+        "/images/image6.jpg",
+        "/images/image7.jpg",
+        "/images/image8.jpg"
+    ];
 
     return (
         <section className="py-24 bg-gray-50/50 relative overflow-hidden">
@@ -53,23 +58,17 @@ export default function GalleryOverview() {
                     viewport={{ once: true, margin: "-100px" }}
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
                 >
-                    {placeholders.map((item, index) => (
+                    {galleryImages.map((src, index) => (
                         <motion.div
                             key={index}
                             variants={itemVariants}
                             whileHover={{ scale: 1.03 }}
                             className="w-full aspect-[4/3] bg-gray-200 rounded-2xl relative overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group border border-black/5"
                         >
-                            {/* SVG Placeholder Icon */}
-                            <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                                <svg className="w-12 h-12 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <div className="absolute inset-0 bg-gray-100/40 animate-pulse"></div>
+                            <img src={src} alt={`Gallery image ${index + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             
                             {/* Hover overlay hint */}
-                            <div className="absolute inset-0 bg-green-dark/0 group-hover:bg-green-dark/10 transition-colors duration-300"></div>
+                            <div className="absolute inset-0 bg-green-dark/0 group-hover:bg-green-dark/20 transition-colors duration-300 mix-blend-multiply"></div>
                         </motion.div>
                     ))}
                 </motion.div>

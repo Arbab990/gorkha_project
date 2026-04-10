@@ -4,37 +4,73 @@ import { motion } from "framer-motion";
 export default function Gallery() {
     const { t } = useTranslation();
 
+    const galleryImages = [
+        { src: "/images/image5.jpg" },
+        { src: "/images/image6.jpg" },
+        { src: "/images/image7.jpg" },
+        { src: "/images/image8.jpg" },
+        { src: "/images/image9.jpg" },
+        { src: "/images/image10.jpg", position: "object-[center_15%]" },
+        { src: "/images/image11.jpg" },
+        { src: "/images/image12.jpg" },
+        { src: "/images/image13.jpg" },
+        { src: "/images/image14.jpg", position: "object-top" },
+        { src: "/images/image15.jpg" },
+        { src: "/images/image16.jpg" }
+    ];
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: { staggerChildren: 0.15 }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, scale: 0.9 },
+        show: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
+    };
+
     return (
         <div className="pt-32 pb-24 px-6 min-h-screen bg-gray-50/50">
-            <div className="max-w-4xl mx-auto text-center mt-12 mb-16">
+            <div className="max-w-7xl mx-auto mt-12 mb-16">
                 
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="font-heading text-4xl md:text-5xl font-bold text-green-dark mb-6 leading-tight"
-                >
-                    {t("galleryPage.galleryTitle") || "Gallery"}
-                </motion.h1>
-                <div className="w-24 h-1 bg-orange mx-auto rounded-full mb-12"></div>
+                <div className="text-center">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="font-heading text-4xl md:text-5xl font-bold text-green-dark mb-6 leading-tight"
+                    >
+                        {t("galleryPage.galleryTitle") || "Gallery"}
+                    </motion.h1>
+                    <div className="w-24 h-1 bg-orange mx-auto rounded-full mb-16"></div>
+                </div>
 
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="bg-white p-12 md:p-16 rounded-[2rem] shadow-xl border border-gray-100"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
                 >
-                    <div className="text-gray-400 mb-6 flex justify-center">
-                        <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <h2 className="text-2xl font-heading font-medium text-gray-500 mb-4">
-                        Page Content Coming Soon
-                    </h2>
-                    <p className="text-gray-400 font-body">
-                        This section is currently under construction.
-                    </p>
+                    {galleryImages.map((img, index) => (
+                        <motion.div
+                            key={index}
+                            variants={itemVariants}
+                            whileHover={{ scale: 1.03 }}
+                            className="w-full aspect-[4/3] bg-gray-200 rounded-[1.5rem] relative overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-black/5"
+                        >
+                            <img 
+                                src={img.src} 
+                                alt={`Gallery image ${index + 1}`} 
+                                className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${img.position || 'object-center'}`} 
+                            />
+                            
+                            {/* Hover overlay hint */}
+                            <div className="absolute inset-0 bg-green-dark/0 group-hover:bg-green-dark/20 transition-colors duration-300 mix-blend-multiply"></div>
+                        </motion.div>
+                    ))}
                 </motion.div>
 
             </div>
