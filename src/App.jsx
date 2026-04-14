@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import OurStory from "./pages/OurStory";
 import MissionVision from "./pages/MissionVision";
 import Leadership from "./pages/Leadership";
+import AboutFounder from "./pages/AboutFounder";
 import Timeline from "./pages/Timeline";
 import Founders from "./pages/Founders";
 import Archives from "./pages/Archives";
@@ -54,6 +55,7 @@ export default function App() {
           <Route path="about/our-story" element={<OurStory />} />
           <Route path="about/mission-vision" element={<MissionVision />} />
           <Route path="about/leadership" element={<Leadership />} />
+          <Route path="about/about-founder" element={<AboutFounder />} />
           <Route path="legacy/timeline" element={<Timeline />} />
           <Route path="legacy/founders" element={<Founders />} />
           <Route path="legacy/archives" element={<Archives />} />

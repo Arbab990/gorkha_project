@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { CalendarX } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function UpcomingEvents() {
     const { t } = useTranslation();
@@ -22,19 +24,24 @@ export default function UpcomingEvents() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="bg-white p-12 md:p-16 rounded-[2rem] shadow-xl border border-gray-100"
+                    className="bg-white p-12 md:p-20 rounded-[2.5rem] shadow-sm border border-gray-100 flex flex-col items-center max-w-3xl mx-auto"
                 >
-                    <div className="text-gray-400 mb-6 flex justify-center">
-                        <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
+                    <div className="text-gray-300 mb-8 bg-gray-50 p-8 rounded-full border-4 border-gray-100">
+                        <CalendarX size={72} strokeWidth={1} />
                     </div>
-                    <h2 className="text-2xl font-heading font-medium text-gray-500 mb-4">
-                        Page Content Coming Soon
+                    <h2 className="text-3xl font-heading font-bold text-gray-700 mb-4">
+                        {t("eventPages.noEventsTitle")}
                     </h2>
-                    <p className="text-gray-400 font-body">
-                        This section is currently under construction.
+                    <p className="text-gray-500 font-body text-lg leading-relaxed mb-10 max-w-lg">
+                        {t("eventPages.noEventsDesc")}
                     </p>
+                    
+                    <Link
+                        to="/events/past"
+                        className="inline-flex items-center justify-center px-8 py-3.5 bg-green-dark text-white font-medium rounded-full hover:bg-orange transition-colors duration-300 shadow-md hover:shadow-lg font-heading tracking-wide"
+                    >
+                        {t("eventPages.browsePastEvents")}
+                    </Link>
                 </motion.div>
 
             </div>

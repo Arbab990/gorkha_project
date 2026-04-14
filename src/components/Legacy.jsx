@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, Flag, Landmark, BookOpen, Building2, Network } from "lucide-react";
+import { Users, Landmark, Network, Heart, BookOpen, Flag } from "lucide-react";
 
 export default function Legacy({ isPage = false }) {
     const { t } = useTranslation();
@@ -11,12 +11,12 @@ export default function Legacy({ isPage = false }) {
     if (!Array.isArray(events)) return null;
 
     const icons = [
-        <MessageSquare size={24} />,
-        <Flag size={24} />,
+        <Users size={24} />,
         <Landmark size={24} />,
+        <Network size={24} />,
+        <Heart size={24} />,
         <BookOpen size={24} />,
-        <Building2 size={24} />,
-        <Network size={24} />
+        <Flag size={24} />
     ];
 
     return (

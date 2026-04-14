@@ -20,6 +20,7 @@ export default function Navbar() {
                 { label: t("aboutPages.ourStory"), href: "/about/our-story", isRoute: true },
                 { label: t("aboutPages.missionVision"), href: "/about/mission-vision", isRoute: true },
                 { label: t("aboutPages.leadership"), href: "/about/leadership", isRoute: true },
+                { label: t("aboutPages.aboutFounder"), href: "/about/about-founder", isRoute: true },
             ]
         },
         {

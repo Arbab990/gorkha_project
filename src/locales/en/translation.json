@@ -25,6 +25,17 @@
     "joinCommunity": "Join the Community",
     "supportDonate": "Support / Donate"
   },
+  "introduction": {
+    "subtitle": "Introduction",
+    "title": "Uniting the Gorkha Community Since 1968",
+    "description": "Bhartiya Gorkha Sewa Samaj stands as a beacon of unity, cultural preservation, and social welfare for Gorkha families across India. We are dedicated to providing support in everyday life while keeping our rich traditions and heritage alive for future generations.",
+    "pillar1Title": "Community Welfare",
+    "pillar1Desc": "Providing medical, financial, and marriage assistance to families in need.",
+    "pillar2Title": "Cultural Heritage",
+    "pillar2Desc": "Preserving and celebrating our vibrant traditions, festivals, and language.",
+    "pillar3Title": "Youth Empowerment",
+    "pillar3Desc": "Guiding and recognizing student excellence to build a brighter future."
+  },
   "features": {
     "heading": "Unite for Our Heritage.",
     "headingLine2": "Empower Our Future.",
@@ -102,18 +113,28 @@
     "missionVision": "Mission & Vision",
     "missionVisionTitle": "Mission & Vision",
     "leadership": "Leadership / Committee",
-    "leadershipTitle": "Leadership / Committee"
+    "leadershipTitle": "Leadership / Committee",
+    "aboutFounder": "About Founder",
+    "aboutFounderTitle": "About Founder"
+  },
+  "aboutFounderPage": {
+    "para1Title": "A Lifelong Dedication to Service",
+    "para1Text": "Mr. Ved Bahadur Thapa (V.B. Thapa), son of the late Subedar Major Mitra Lal Thapa, has dedicated his life to the continuous upliftment of the community. A retired Technical Transport officer from the Medical Health and Family Welfare Department of Uttar Pradesh, his professional career was defined by his unwavering commitment to his peers. Serving as the unopposed State General Secretary and later as the State President of the State Employees Organization, he consistently championed the rights of his colleagues through active dialogue and steadfast determination.",
+    "para2Title": "Championing the Gorkha Identity",
+    "para2Text": "Beyond his professional duties, Mr. Thapa has been an invaluable pillar of the Bharatiya Gorkha Sewa Samaj since 1973. Rising through the ranks from Assistant Cultural Minister to State President, he has tirelessly fought for the rights and recognition of Indian Gorkhas. Notably, since 2002, he has spearheaded the critical movement to include the Gorkha community in the state's Other Backward Classes (OBC) list. Facing bureaucratic challenges, he firmly refuted inaccurate district population reports, ensuring that the true voice and presence of the Gorkhas were recognized at the highest levels of government.",
+    "para3Title": "A Legacy of Compassion and Action",
+    "para3Text": "Under his visionary leadership, the Samaj has flourished into an organization deeply embedded in social welfare. From organizing vital drinking water camps and community feasts, to leading grand cultural celebrations, his impact is profound. Furthermore, his compassionate direction ensures continuous support for those in distress—providing essential medical assistance, aiding separated families, and delivering immediate relief to victims of natural disasters, such as the 2015 Nepal earthquake."
   },
   "legacyPages": {
     "timeline": "Timeline",
     "timelineTitle": "Timeline",
     "timelineEvents": [
-      { "year": "1968", "title": "Recognition of Nepali Language", "desc": "Marked the early acknowledgment of Gorkha linguistic identity, strengthening cultural roots in regions like Darjeeling." },
-      { "year": "1986", "title": "Gorkhaland Movement", "desc": "A defining mass movement asserting identity, dignity, and the demand for political recognition." },
-      { "year": "1988", "title": "Formation of DGHC", "desc": "First structured administrative setup giving Gorkhas partial self-governance." },
-      { "year": "1992", "title": "Included in the Constitution", "desc": "Inclusion in the Eighth Schedule gave national recognition to the Nepali language and strengthened Gorkha identity across India." },
-      { "year": "2011", "title": "Establishment of GTA", "desc": "Enhanced administrative powers and governance structure replacing DGHC." },
-      { "year": "Present", "title": "Community & Digital Unity", "desc": "Organizations like Bhartiya Gorkha Seva Samaj actively working on education, cultural preservation, social welfare, and digital networking." }
+      { "year": "1968", "title": "Establishment of Nepali Sewa Samaj", "desc": "Nepali Sewa Samaj, Lucknow was formed, uniting the community with its first executive committee to promote cultural preservation and progress." },
+      { "year": "1976", "title": "Establishment of Durga Temple", "desc": "Shri Shri Sarva Janani Durga Temple was grandly established in Telibagh, Lucknow, serving as a hub for daily prayers, bhajan-kirtan, and community bonding." },
+      { "year": "1987", "title": "Merger & Name Change", "desc": "All regional organizations unanimously merged into a single entity, appending 'Bharatiya' to become the Bharatiya Nepali Sewa Samaj, U.P., Lucknow." },
+      { "year": "1990", "title": "Kajari Teej Women's Committee", "desc": "Formed to increase public awareness, self-confidence, and respect for women, successfully organizing large-scale cultural events." },
+      { "year": "2006", "title": "National Affiliation & Souvenir", "desc": "Successfully printed its first souvenir and became affiliated with the national-level organization, the Bharatiya Gorkha Parisangh." },
+      { "year": "2013", "title": "Renamed to Bharatiya Gorkha Sewa Samaj", "desc": "A historic amendment changed the society's name to Bharatiya Gorkha Sewa Samaj, officially recognized by the Chit Fund Registrar." }
     ],
     "founders": "Founders & Senior Members",
     "foundersTitle": "Founders & Senior Members",
@@ -157,7 +178,10 @@
     "upcomingEvents": "Upcoming Events",
     "upcomingEventsTitle": "Upcoming Events",
     "pastEvents": "Past Events",
-    "pastEventsTitle": "Past Events"
+    "pastEventsTitle": "Past Events",
+    "noEventsTitle": "No Upcoming Events",
+    "noEventsDesc": "We don’t have any scheduled events at the moment. Stay tuned, because exciting programs and community gatherings are always on their way!",
+    "browsePastEvents": "Browse Past Events"
   },
   "ourStoryPage": {
     "title": "Our Story – Bhartiya Gorkha Seva Samaj",
