@@ -134,7 +134,12 @@
     "culturalActivitiesTitle": "Cultural Activities"
   },
   "galleryPage": {
-    "galleryTitle": "Gallery"
+    "galleryTitle": "Gallery",
+    "badaMangalEvent": "Bada Mangal Event",
+    "foundationDay": "11th Foundation Day",
+    "runForGorkhaland": "RUN For Gorkhaland",
+    "kajriTeejKaryakram": "Kajri Teej Karyakram",
+    "photos": "Photos"
   },
   "newsPage": {
     "newsTitle": "News"
@@ -194,14 +199,27 @@
     "sectionTitle": "The People Behind Bhartiya Gorkha Seva Samaj",
     "sectionSubtitle": "Dedicated individuals working together to build a stronger, united Gorkha community.",
     "leaders": [
-      { "initials": "AG", "name": "Amrit Gurung", "role": "Founder & Product Architect", "desc": "Leads the vision, product strategy, technology roadmap, and overall execution of the platform." },
-      { "initials": "SK", "name": "Shabi Ata Khan", "role": "Co-Founder & Business Strategy Lead", "desc": "Oversees business strategy, partnerships, governance, and long-term sustainability planning." },
-      { "initials": "IG", "name": "Indra Bahadur Gurung", "role": "Senior Community Advisor", "desc": "Provides guidance on discipline, integrity, and community values, and advises on outreach to veterans and elders." },
-      { "initials": "VT", "name": "Ved Bahadur Thapa", "role": "Community Advisor & NGO Liaison", "desc": "Acts as a bridge between traditional Gorkha NGOs and the digital platform, offering decades of community leadership insight." },
-      { "initials": "JT", "name": "Jagrit Raj Thapa", "role": "Community Coordination Associate", "desc": "Supports community coordination, grassroots engagement, and communication with local Gorkha groups." },
-      { "initials": "PB", "name": "Puran Bahadur Bisht", "role": "Education & Youth Advisor", "desc": "Advises on education, youth development initiatives, and learning-focused content for the community." },
-      { "initials": "ST", "name": "Sangeeta Thapa", "role": "Women Community Advisor", "desc": "Provides advisory input on women's participation, community needs, and inclusivity, and supports planning for future women-focused initiatives." },
-      { "initials": "RG", "name": "Ruchi Gurung", "role": "Women Engagement Coordinator", "desc": "Represents women and family perspectives and supports inclusive community participation and engagement." }
+      { "initials": "VBT", "name": "Shri V.B. Thapa", "role": "President", "desc": "Leads the organization with vision and dedication." },
+      { "initials": "NBC", "name": "Shri N.B. Chhetri", "role": "Vice President", "desc": "Supports the president and oversees organizational strategies." },
+      { "initials": "RBT", "name": "Shri R.B. Thapa", "role": "Vice President", "desc": "Plays a key role in executive decisions and planning." },
+      { "initials": "LBST", "name": "Shri L.B.S. Thapa", "role": "Vice President", "desc": "Focuses on community outreach and coordination." },
+      { "initials": "JU", "name": "Shri Jivesh Upadhyay", "role": "Vice President", "desc": "Guides administrative and policy initiatives." },
+      { "initials": "CBT", "name": "Shri C.B. Thapa", "role": "General Secretary", "desc": "Manages core operations and organizational communications." },
+      { "initials": "PBC", "name": "Shri Padam Bahadur Chhetri", "role": "Coordinator", "desc": "Coordinates events and community engagement programs." },
+      { "initials": "GS", "name": "Shri Gopal Shrestha", "role": "Asst. General Secretary", "desc": "Assists the General Secretary in daily operations." },
+      { "initials": "HS", "name": "Shri Heera Singh", "role": "Asst. General Secretary", "desc": "Helps manage operational and administrative tasks." },
+      { "initials": "PB", "name": "Shri Puran Bisht", "role": "Treasurer", "desc": "Oversees financial planning and fund management." },
+      { "initials": "BBB", "name": "Shri Beer Bahadur Bisht", "role": "Organization Secretary", "desc": "Manages organizational structure and membership." },
+      { "initials": "LU", "name": "Shri Lakshman Upadhyay", "role": "Organization Minister", "desc": "Strengthens internal organization and outreach." },
+      { "initials": "CS", "name": "Shri Chandan Singh", "role": "Organization Minister", "desc": "Focuses on expanding the organization's network." },
+      { "initials": "VPK", "name": "Shri Vishnu Prasad Koirala", "role": "Organization Minister", "desc": "Works to unify and strengthen the community." },
+      { "initials": "DS", "name": "Smt. Deepika Sen", "role": "Organization Minister", "desc": "Empowers organizational growth and participation." },
+      { "initials": "NS", "name": "Shri Naveen Shah", "role": "Cultural Minister", "desc": "Leads initiatives to preserve Gorkha culture." },
+      { "initials": "ADS", "name": "Ku. Asha Devi Shah", "role": "Asst. Cultural Minister", "desc": "Assists in organizing cultural events and programs." },
+      { "initials": "JB", "name": "Shri Jham Bahadur", "role": "Office Secretary (Nominated)", "desc": "Handles official documents and office administration." },
+      { "initials": "JNK", "name": "Shri Jeev Narayan Khanal", "role": "Chief Publicity Secretary", "desc": "Manages public relations and campaigns." },
+      { "initials": "RK", "name": "Shri Rahul Khadka", "role": "Auditor", "desc": "Ensures financial transparency and compliance." },
+      { "initials": "GS", "name": "Shri Gaurav Singh", "role": "Media Incharge", "desc": "Handles media relations and digital presence." }
     ]
   },
   "footer": {
