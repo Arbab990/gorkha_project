@@ -1,6 +1,68 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Loader2, AlertCircle, CheckCircle2 } from "lucide-react";
+
+/* ── API Configuration (ready for backend integration) ──────────────── */
+const API_CONFIG = {
+    // TODO: Replace with actual backend endpoint when ready
+    MEMBERSHIP_ENDPOINT: "/api/memberships",
+};
+
+/**
+ * Validates the membership form fields.
+ * Returns an object with field-level error messages.
+ */
+function validateMembershipForm({ formData }) {
+    const errors = {};
+
+    if (!formData.fullName || formData.fullName.trim().length < 2) {
+        errors.fullName = "Full name is required";
+    }
+
+    if (!formData.guardianName || formData.guardianName.trim().length < 2) {
+        errors.guardianName = "Father/Husband name is required";
+    }
+
+    if (!formData.mobileNumber || !/^[6-9]\d{9}$/.test(formData.mobileNumber)) {
+        errors.mobileNumber = "Please enter a valid 10-digit Indian mobile number";
+    }
+
+    if (!formData.dateOfBirth) {
+        errors.dateOfBirth = "Date of birth is required";
+    }
+
+    if (!formData.aadhaarNumber || !/^\d{12}$/.test(formData.aadhaarNumber)) {
+        errors.aadhaarNumber = "Please enter a valid 12-digit Aadhaar number";
+    }
+
+    if (!formData.permanentAddress || formData.permanentAddress.trim().length < 10) {
+        errors.permanentAddress = "Please enter your full permanent address";
+    }
+
+    return errors;
+}
+
+/**
+ * Builds the membership API payload.
+ * This structure is designed for easy backend consumption.
+ */
+function buildMembershipPayload({ formData, familyMembers }) {
+    return {
+        applicant: {
+            ...formData,
+            applicationDate: formData.applicationDate || new Date().toISOString().slice(0, 10),
+        },
+        familyMembers: familyMembers.filter(
+            (member) => member.name || member.relation || member.age
+        ),
+        metadata: {
+            source: "website",
+            timestamp: new Date().toISOString(),
+            userAgent: navigator.userAgent,
+        },
+    };
+}
 
 const initialFormState = {
     applicationDate: new Date().toISOString().slice(0, 10),
@@ -38,7 +100,13 @@ export default function BecomeMember() {
     const { t } = useTranslation();
     const [formData, setFormData] = useState(initialFormState);
     const [familyMembers, setFamilyMembers] = useState(createFamilyRows);
-    const [submitted, setSubmitted] = useState(false);
+
+    // ── UI state ──
+    const [isProcessing, setIsProcessing] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
+    const [formErrors, setFormErrors] = useState({});
+    const [apiError, setApiError] = useState("");
+    const [referenceId, setReferenceId] = useState("");
 
     useEffect(() => {
         setFamilyMembers((current) => {
@@ -56,6 +124,10 @@ export default function BecomeMember() {
             ...current,
             [name]: value,
         }));
+        // Clear field-level error on change
+        if (formErrors[name]) {
+            setFormErrors((prev) => ({ ...prev, [name]: undefined }));
+        }
     };
 
     const handleFamilyChange = (index, field, value) => {
@@ -70,20 +142,75 @@ export default function BecomeMember() {
         setFamilyMembers((current) => [...current, createEmptyFamilyMember()]);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
+        setApiError("");
 
-        const payload = {
-            applicant: formData,
-            familyMembers: familyMembers.filter(
-                (member) => member.name || member.relation || member.age
-            ),
-        };
+        // ── Client-side validation ──
+        const errors = validateMembershipForm({ formData });
+        if (Object.keys(errors).length > 0) {
+            setFormErrors(errors);
+            return;
+        }
 
-        // Frontend-only for now. This payload structure is kept intentional so
-        // it can later be sent to a membership backend endpoint without reshaping.
-        console.info("Membership form submission payload:", payload);
-        setSubmitted(true);
+        setFormErrors({});
+        setIsProcessing(true);
+
+        // ── Build API payload ──
+        const payload = buildMembershipPayload({ formData, familyMembers });
+
+        try {
+            /*
+             * ─────────────────────────────────────────────────────────
+             * TODO: BACKEND INTEGRATION POINT
+             * ─────────────────────────────────────────────────────────
+             *
+             * Replace the simulated delay below with an actual API call:
+             *
+             * const response = await fetch(API_CONFIG.MEMBERSHIP_ENDPOINT, {
+             *     method: "POST",
+             *     headers: { "Content-Type": "application/json" },
+             *     body: JSON.stringify(payload),
+             * });
+             *
+             * if (!response.ok) {
+             *     const errorData = await response.json();
+             *     throw new Error(errorData.message || "Submission failed");
+             * }
+             *
+             * const data = await response.json();
+             * setReferenceId(data.referenceId);
+             *
+             * ─────────────────────────────────────────────────────────
+             */
+
+            // Simulated API call (remove when backend is ready)
+            await new Promise((resolve) => setTimeout(resolve, 1500));
+
+            // Simulated reference ID (replace with actual from backend)
+            const mockRefId = `BGSS-M-${Date.now().toString(36).toUpperCase()}`;
+            setReferenceId(mockRefId);
+
+            console.info("📦 Membership Payload (ready for API):", payload);
+
+            setShowSuccess(true);
+        } catch (error) {
+            console.error("Membership submission failed:", error);
+            setApiError(
+                error?.message || "Something went wrong. Please try again or contact support."
+            );
+        } finally {
+            setIsProcessing(false);
+        }
+    };
+
+    const resetForm = () => {
+        setFormData(initialFormState);
+        setFamilyMembers(createFamilyRows());
+        setShowSuccess(false);
+        setFormErrors({});
+        setApiError("");
+        setReferenceId("");
     };
 
     const inputClassName =
@@ -146,6 +273,25 @@ export default function BecomeMember() {
                     </div>
 
                     <form onSubmit={handleSubmit} className="px-8 py-8 md:px-12 md:py-10 space-y-12">
+
+                        {/* ── API Error Banner ── */}
+                        <AnimatePresence>
+                            {apiError && (
+                                <motion.div
+                                    key="api-error"
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: "auto" }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    className="bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3"
+                                >
+                                    <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                                    <div>
+                                        <p className="text-sm font-semibold text-red-700">Submission Failed</p>
+                                        <p className="text-xs text-red-600 mt-0.5">{apiError}</p>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                         <motion.section className="space-y-6" {...sectionMotionProps}>
                             <div>
                                 <h3 className="font-heading text-2xl font-bold text-green-dark mb-2">
@@ -373,32 +519,75 @@ export default function BecomeMember() {
                         >
                             <motion.button
                                 type="submit"
-                                whileHover={{ y: -2, scale: 1.01 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="inline-flex items-center justify-center rounded bg-orange px-8 py-2.5 text-sm font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-orange-light"
+                                disabled={isProcessing}
+                                whileHover={!isProcessing ? { y: -2, scale: 1.01 } : {}}
+                                whileTap={!isProcessing ? { scale: 0.98 } : {}}
+                                className={`inline-flex items-center justify-center gap-2 rounded bg-orange px-8 py-2.5 text-sm font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-orange-light ${
+                                    isProcessing ? "opacity-80 cursor-not-allowed" : ""
+                                }`}
                             >
-                                {t("becomeMemberPage.submitBtn")}
+                                {isProcessing ? (
+                                    <>
+                                        <Loader2 className="w-4 h-4 animate-spin" />
+                                        Submitting...
+                                    </>
+                                ) : (
+                                    t("becomeMemberPage.submitBtn")
+                                )}
                             </motion.button>
                         </motion.div>
 
-                        {submitted && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 12 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="rounded-2xl border border-green/20 bg-green/8 px-5 py-4 text-left"
-                            >
-                                <p className="text-green-dark font-medium mb-1">
-                                    Form captured on the frontend.
-                                </p>
-                                <p className="text-sm text-gray-600 leading-relaxed">
-                                    No backend is connected yet, so the data was not sent anywhere.
-                                    The page is already structured for future API integration.
-                                </p>
-                            </motion.div>
-                        )}
+
                     </form>
                 </motion.div>
             </div>
+
+            {/* ── SUCCESS MODAL ─────────────────────────────── */}
+            <AnimatePresence>
+                {showSuccess && (
+                    <motion.div
+                        key="success-overlay"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                        onClick={() => resetForm()}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                            className="bg-white rounded-[2rem] p-10 max-w-md w-full text-center shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="w-20 h-20 bg-green-dark/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                                <CheckCircle2 className="w-10 h-10 text-green-dark" />
+                            </div>
+                            <h3 className="font-heading text-2xl font-bold text-green-dark mb-2">Application Submitted! 🙏</h3>
+                            <p className="text-gray-500 text-sm mb-2">
+                                Your membership application has been received successfully.
+                            </p>
+                            {referenceId && (
+                                <p className="text-xs text-gray-400 mb-1">
+                                    Reference ID: <span className="font-mono font-semibold text-gray-600">{referenceId}</span>
+                                </p>
+                            )}
+                            <p className="text-gray-400 text-xs mb-6 leading-relaxed">
+                                No backend is connected yet — this is a UI demonstration. Your application will be processed once the integration is live.
+                            </p>
+                            <motion.button
+                                whileHover={{ scale: 1.03 }}
+                                whileTap={{ scale: 0.97 }}
+                                onClick={() => resetForm()}
+                                className="bg-green-dark text-white px-8 py-3 rounded-xl font-semibold text-sm hover:bg-green transition-colors"
+                            >
+                                Close
+                            </motion.button>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 }
