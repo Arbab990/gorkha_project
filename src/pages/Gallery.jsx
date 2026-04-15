@@ -51,10 +51,82 @@ export default function Gallery() {
             title: t("galleryPage.kajriTeejKaryakram") || "Kajri Teej Karyakram",
             coverImage: "/images/kajriteej1.jpg",
             images: [
-                { src: "/images/image13.jpg" },
-                { src: "/images/kajriteej1.jpg" },
-                { src: "/images/kajriteej2.jpg" },
-                { src: "/images/kajriteej3.png" }
+                { src: "/images/image13.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/kajriteej1.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/kajriteej2.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/kajriteej3.png", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/kajriteej2016.jpg", fit: "object-contain", cardBg: "bg-black" }
+            ]
+        },
+        {
+            id: "saraswati-pooja-2025",
+            title: t("galleryPage.saraswatiPooja2025") || "Saraswati Pooja 2025",
+            coverImage: "/images/pooja.jpg",
+            images: [
+                { src: "/images/pooja.jpg" },
+                { src: "/images/pooja2.jpg" }
+            ]
+        },
+        {
+            id: "fool-paati-karyakram-2017",
+            title: t("galleryPage.foolPaatiKaryakram2017") || "Fool Paati Karyakram 2017",
+            coverImage: "/images/foolpati1.jpg",
+            images: [
+                { src: "/images/foolpati1.jpg" },
+                { src: "/images/foolpati2.jpg" },
+                { src: "/images/foolpati3.jpg" }
+            ]
+        },
+        {
+            id: "bada-mangal-2017",
+            title: t("galleryPage.badaMangal2017") || "Bada Mangal 2017",
+            coverImage: "/images/Bada mangal 2017.jpg",
+            images: [
+                { src: "/images/Bada mangal 2017.jpg" }
+            ]
+        },
+        {
+            id: "blood-donation",
+            title: t("galleryPage.bloodDonation") || "Blood Donation",
+            coverImage: "/images/blooddonation1.jpg",
+            images: [
+                { src: "/images/blooddonation1.jpg" },
+                { src: "/images/blooddonation2.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/blooddonation3.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/blooddonation4.jpg" }
+            ]
+        },
+        {
+            id: "picnic",
+            title: t("galleryPage.picnic") || "Picnic",
+            coverImage: "/images/picnic1.jpg",
+            images: [
+                { src: "/images/picnic1.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/picnic2.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/picnic3.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/picnic4.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/picnic5.jpg", fit: "object-contain", cardBg: "bg-black" }
+            ]
+        },
+        {
+            id: "felicitation-ceremony",
+            title: t("galleryPage.felicitationCeremony") || "Felicitation Ceremony",
+            coverImage: "/images/felicitation1.jpg",
+            images: [
+                { src: "/images/felicitation1.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/felicitation2.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/felicitation3.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/felicitation4.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/felicitation5.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/felicitation6.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/felicitation7.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/felicitation8.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/felicitation9.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/felicitation10.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/felicitation11.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/felicitation12.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/felicitation13.jpg", fit: "object-contain", cardBg: "bg-black" },
+                { src: "/images/felicitation14.jpg", fit: "object-contain", cardBg: "bg-black" }
             ]
         }
     ];
@@ -75,7 +147,7 @@ export default function Gallery() {
     return (
         <div className="pt-32 pb-24 px-6 min-h-screen bg-gray-50/50">
             <div className="max-w-7xl mx-auto mt-12 mb-16">
-                
+
                 <div className="text-center mb-12">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -108,9 +180,9 @@ export default function Gallery() {
                                     >
                                         <div className="w-full aspect-[4/3] relative overflow-hidden bg-gray-100">
                                             {folder.coverImage ? (
-                                                <img 
-                                                    src={folder.coverImage} 
-                                                    alt={folder.title} 
+                                                <img
+                                                    src={folder.coverImage}
+                                                    alt={folder.title}
                                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                                 />
                                             ) : (
@@ -118,7 +190,7 @@ export default function Gallery() {
                                                     <FiFolder className="w-16 h-16" />
                                                 </div>
                                             )}
-                                            
+
                                             {/* Folder Overlay Gradient */}
                                             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                         </div>
@@ -145,7 +217,7 @@ export default function Gallery() {
                         >
                             <div className="flex items-center justify-between mb-8">
                                 <div className="flex items-center gap-4">
-                                    <button 
+                                    <button
                                         onClick={() => setActiveFolder(null)}
                                         className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-600 hover:text-orange hover:shadow-md hover:border-orange/20 transition-all border border-gray-100"
                                     >
@@ -157,7 +229,7 @@ export default function Gallery() {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <motion.div
                                 variants={containerVariants}
                                 initial="hidden"
@@ -169,12 +241,12 @@ export default function Gallery() {
                                         key={index}
                                         variants={itemVariants}
                                         whileHover={{ scale: 1.03 }}
-                                        className="w-full aspect-[4/3] bg-gray-200 rounded-[1.5rem] relative overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-black/5"
+                                        className={`w-full aspect-[4/3] rounded-[1.5rem] relative overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-black/5 ${img.cardBg || "bg-gray-200"}`}
                                     >
-                                        <img 
-                                            src={img.src} 
-                                            alt={`${activeFolder.title} - ${index + 1}`} 
-                                            className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${img.position || 'object-center'}`} 
+                                        <img
+                                            src={img.src}
+                                            alt={`${activeFolder.title} - ${index + 1}`}
+                                            className={`w-full h-full ${img.fit || "object-cover"} transition-transform duration-500 group-hover:scale-110 ${img.position || "object-center"}`}
                                         />
                                         <div className="absolute inset-0 bg-green-dark/0 group-hover:bg-green-dark/20 transition-colors duration-300 mix-blend-multiply"></div>
                                     </motion.div>

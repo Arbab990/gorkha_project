@@ -129,12 +129,36 @@
     "timeline": "Timeline",
     "timelineTitle": "Timeline",
     "timelineEvents": [
-      { "year": "1968", "title": "Establishment of Nepali Sewa Samaj", "desc": "Nepali Sewa Samaj, Lucknow was formed, uniting the community with its first executive committee to promote cultural preservation and progress." },
-      { "year": "1976", "title": "Establishment of Durga Temple", "desc": "Shri Shri Sarva Janani Durga Temple was grandly established in Telibagh, Lucknow, serving as a hub for daily prayers, bhajan-kirtan, and community bonding." },
-      { "year": "1987", "title": "Merger & Name Change", "desc": "All regional organizations unanimously merged into a single entity, appending 'Bharatiya' to become the Bharatiya Nepali Sewa Samaj, U.P., Lucknow." },
-      { "year": "1990", "title": "Kajari Teej Women's Committee", "desc": "Formed to increase public awareness, self-confidence, and respect for women, successfully organizing large-scale cultural events." },
-      { "year": "2006", "title": "National Affiliation & Souvenir", "desc": "Successfully printed its first souvenir and became affiliated with the national-level organization, the Bharatiya Gorkha Parisangh." },
-      { "year": "2013", "title": "Renamed to Bharatiya Gorkha Sewa Samaj", "desc": "A historic amendment changed the society's name to Bharatiya Gorkha Sewa Samaj, officially recognized by the Chit Fund Registrar." }
+      {
+        "year": "1968",
+        "title": "Establishment of Nepali Sewa Samaj",
+        "desc": "Nepali Sewa Samaj, Lucknow was formed, uniting the community with its first executive committee to promote cultural preservation and progress."
+      },
+      {
+        "year": "1976",
+        "title": "Establishment of Durga Temple",
+        "desc": "Shri Shri Sarva Janani Durga Temple was grandly established in Telibagh, Lucknow, serving as a hub for daily prayers, bhajan-kirtan, and community bonding."
+      },
+      {
+        "year": "1987",
+        "title": "Merger & Name Change",
+        "desc": "All regional organizations unanimously merged into a single entity, appending 'Bharatiya' to become the Bharatiya Nepali Sewa Samaj, U.P., Lucknow."
+      },
+      {
+        "year": "1990",
+        "title": "Kajari Teej Women's Committee",
+        "desc": "Formed to increase public awareness, self-confidence, and respect for women, successfully organizing large-scale cultural events."
+      },
+      {
+        "year": "2006",
+        "title": "National Affiliation & Souvenir",
+        "desc": "Successfully printed its first souvenir and became affiliated with the national-level organization, the Bharatiya Gorkha Parisangh."
+      },
+      {
+        "year": "2013",
+        "title": "Renamed to Bharatiya Gorkha Sewa Samaj",
+        "desc": "A historic amendment changed the society's name to Bharatiya Gorkha Sewa Samaj, officially recognized by the Chit Fund Registrar."
+      }
     ],
     "founders": "Founders & Senior Members",
     "foundersTitle": "Founders & Senior Members",
@@ -160,6 +184,12 @@
     "foundationDay": "11th Foundation Day",
     "runForGorkhaland": "RUN For Gorkhaland",
     "kajriTeejKaryakram": "Kajri Teej Karyakram",
+    "saraswatiPooja2025": "Saraswati Pooja 2025",
+    "foolPaatiKaryakram2017": "Fool Paati Karyakram 2017",
+    "badaMangal2017": "Bada Mangal 2017",
+    "bloodDonation": "Blood Donation",
+    "picnic": "Picnic",
+    "felicitationCeremony": "Felicitation Ceremony",
     "photos": "Photos"
   },
   "newsPage": {
@@ -171,8 +201,116 @@
   "involvedPages": {
     "becomeMember": "Become a Member",
     "becomeMemberTitle": "Become a Member",
+    "sectionSubtitle": "Stand with courage, unity, and a spirit of service. Become a member and help carry forward the Gorkha community's spirit with pride and purpose.",
     "volunteer": "Volunteer",
-    "volunteerTitle": "Volunteer"
+    "volunteerTitle": "Volunteer Opportunities",
+    "volunteerSubtitle": "Find a role that matches your skills and availability",
+    "applyNow": "Apply Now",
+    "roles": {
+      "community": {
+        "title": "Community Outreach Volunteer",
+        "desc": "Help spread awareness about our programs in your local community and assist in organizing events.",
+        "time": "5-10 hours/month",
+        "location": "Your Local Area",
+        "tags": [
+          "Communication",
+          "Local Knowledge",
+          "Event Planning"
+        ]
+      },
+      "digital": {
+        "title": "Digital Support Volunteer",
+        "desc": "Assist community members with digital literacy, registration, and navigating modern tools.",
+        "time": "3-5 hours/week",
+        "location": "Remote / On-site",
+        "tags": [
+          "Tech Savvy",
+          "Patience",
+          "Teaching"
+        ]
+      },
+      "legal": {
+        "title": "Legal Aid Assistant",
+        "desc": "Support our legal team in organizing camps and helping beneficiaries with documentation.",
+        "time": "10-15 hours/month",
+        "location": "Regional Centers",
+        "tags": [
+          "Documentation",
+          "Organization",
+          "Empathy"
+        ]
+      },
+      "skill": {
+        "title": "Skill Development Trainer",
+        "desc": "Share your professional expertise by conducting workshops for youth in your skill area.",
+        "time": "Flexible",
+        "location": "Training Centers",
+        "tags": [
+          "Professional Expertise",
+          "Training",
+          "Mentorship"
+        ]
+      },
+      "content": {
+        "title": "Content Creator",
+        "desc": "Help create content for social media, newsletters, and community updates.",
+        "time": "5-8 hours/week",
+        "location": "Remote",
+        "tags": [
+          "Writing",
+          "Photography",
+          "Social Media"
+        ]
+      },
+      "event": {
+        "title": "Event Coordinator",
+        "desc": "Plan and execute community events, cultural programs, and platform activities.",
+        "time": "Variable",
+        "location": "Event Locations",
+        "tags": [
+          "Event Management",
+          "Coordination",
+          "Leadership"
+        ]
+      }
+    }
+  },
+  "becomeMemberPage": {
+    "title": "Become a Member",
+    "subtitle": "Stand with courage, unity, and service. Become a member and help carry forward the spirit of the Gorkha community with pride and purpose.",
+    "membershipForm": "Membership Form",
+    "orgName": "Bhartiya Gorkha Seva Samaj",
+    "location": "Uttar Pradesh, Lucknow",
+    "applicationDate": "Application Date",
+    "notSet": "Not set",
+    "applicantDetails": "Applicant Details",
+    "name": "Name",
+    "fullName": "Full name",
+    "mobileNumber": "Mobile Number",
+    "mobileNumberPlaceholder": "Mobile number",
+    "fatherHusbandName": "Father's / Husband's Name",
+    "fatherHusbandPlaceholder": "Father's or husband's name",
+    "occupation": "Occupation / Job / Skill",
+    "occupationPlaceholder": "Occupation, job or skill",
+    "dob": "Date of Birth",
+    "aadhar": "Aadhar",
+    "aadharPlaceholder": "Aadhar number",
+    "familyCount": "Number of Family Members",
+    "familyCountPlaceholder": "Family member count",
+    "monthlyIncome": "Monthly Income",
+    "monthlyIncomePlaceholder": "Monthly income",
+    "permanentAddress": "Permanent Address",
+    "permanentAddressPlaceholder": "Permanent address",
+    "otherSkills": "Other Skills / Additional Details",
+    "otherSkillsPlaceholder": "Any additional details, experience, skills or notes",
+    "familyMemberDetails": "Family Member Details",
+    "sNo": "S. No.",
+    "relation": "Relation With Applicant",
+    "relationPlaceholder": "Relation",
+    "age": "Age",
+    "memberNamePlaceholder": "Member name",
+    "addFamilyMember": "+ Add One More Family Member",
+    "submitBtn": "Submit Membership Form"
   },
   "eventPages": {
     "upcomingEvents": "Upcoming Events",
@@ -223,27 +361,132 @@
     "sectionTitle": "The People Behind Bhartiya Gorkha Seva Samaj",
     "sectionSubtitle": "Dedicated individuals working together to build a stronger, united Gorkha community.",
     "leaders": [
-      { "initials": "VBT", "name": "Shri V.B. Thapa", "role": "President", "desc": "Leads the organization with vision and dedication." },
-      { "initials": "NBC", "name": "Shri N.B. Chhetri", "role": "Vice President", "desc": "Supports the president and oversees organizational strategies." },
-      { "initials": "RBT", "name": "Shri R.B. Thapa", "role": "Vice President", "desc": "Plays a key role in executive decisions and planning." },
-      { "initials": "LBST", "name": "Shri L.B.S. Thapa", "role": "Vice President", "desc": "Focuses on community outreach and coordination." },
-      { "initials": "JU", "name": "Shri Jivesh Upadhyay", "role": "Vice President", "desc": "Guides administrative and policy initiatives." },
-      { "initials": "CBT", "name": "Shri C.B. Thapa", "role": "General Secretary", "desc": "Manages core operations and organizational communications." },
-      { "initials": "PBC", "name": "Shri Padam Bahadur Chhetri", "role": "Coordinator", "desc": "Coordinates events and community engagement programs." },
-      { "initials": "GS", "name": "Shri Gopal Shrestha", "role": "Asst. General Secretary", "desc": "Assists the General Secretary in daily operations." },
-      { "initials": "HS", "name": "Shri Heera Singh", "role": "Asst. General Secretary", "desc": "Helps manage operational and administrative tasks." },
-      { "initials": "PB", "name": "Shri Puran Bisht", "role": "Treasurer", "desc": "Oversees financial planning and fund management." },
-      { "initials": "BBB", "name": "Shri Beer Bahadur Bisht", "role": "Organization Secretary", "desc": "Manages organizational structure and membership." },
-      { "initials": "LU", "name": "Shri Lakshman Upadhyay", "role": "Organization Minister", "desc": "Strengthens internal organization and outreach." },
-      { "initials": "CS", "name": "Shri Chandan Singh", "role": "Organization Minister", "desc": "Focuses on expanding the organization's network." },
-      { "initials": "VPK", "name": "Shri Vishnu Prasad Koirala", "role": "Organization Minister", "desc": "Works to unify and strengthen the community." },
-      { "initials": "DS", "name": "Smt. Deepika Sen", "role": "Organization Minister", "desc": "Empowers organizational growth and participation." },
-      { "initials": "NS", "name": "Shri Naveen Shah", "role": "Cultural Minister", "desc": "Leads initiatives to preserve Gorkha culture." },
-      { "initials": "ADS", "name": "Ku. Asha Devi Shah", "role": "Asst. Cultural Minister", "desc": "Assists in organizing cultural events and programs." },
-      { "initials": "JB", "name": "Shri Jham Bahadur", "role": "Office Secretary (Nominated)", "desc": "Handles official documents and office administration." },
-      { "initials": "JNK", "name": "Shri Jeev Narayan Khanal", "role": "Chief Publicity Secretary", "desc": "Manages public relations and campaigns." },
-      { "initials": "RK", "name": "Shri Rahul Khadka", "role": "Auditor", "desc": "Ensures financial transparency and compliance." },
-      { "initials": "GS", "name": "Shri Gaurav Singh", "role": "Media Incharge", "desc": "Handles media relations and digital presence." }
+      {
+        "initials": "VBT",
+        "name": "Shri V.B. Thapa",
+        "role": "President",
+        "desc": "Leads the organization with vision and dedication."
+      },
+      {
+        "initials": "NBC",
+        "name": "Shri N.B. Chhetri",
+        "role": "Vice President",
+        "desc": "Supports the president and oversees organizational strategies."
+      },
+      {
+        "initials": "RBT",
+        "name": "Shri R.B. Thapa",
+        "role": "Vice President",
+        "desc": "Plays a key role in executive decisions and planning."
+      },
+      {
+        "initials": "LBST",
+        "name": "Shri L.B.S. Thapa",
+        "role": "Vice President",
+        "desc": "Focuses on community outreach and coordination."
+      },
+      {
+        "initials": "JU",
+        "name": "Shri Jivesh Upadhyay",
+        "role": "Vice President",
+        "desc": "Guides administrative and policy initiatives."
+      },
+      {
+        "initials": "CBT",
+        "name": "Shri C.B. Thapa",
+        "role": "General Secretary",
+        "desc": "Manages core operations and organizational communications."
+      },
+      {
+        "initials": "PBC",
+        "name": "Shri Padam Bahadur Chhetri",
+        "role": "Coordinator",
+        "desc": "Coordinates events and community engagement programs."
+      },
+      {
+        "initials": "GS",
+        "name": "Shri Gopal Shrestha",
+        "role": "Asst. General Secretary",
+        "desc": "Assists the General Secretary in daily operations."
+      },
+      {
+        "initials": "HS",
+        "name": "Shri Heera Singh",
+        "role": "Asst. General Secretary",
+        "desc": "Helps manage operational and administrative tasks."
+      },
+      {
+        "initials": "PB",
+        "name": "Shri Puran Bisht",
+        "role": "Treasurer",
+        "desc": "Oversees financial planning and fund management."
+      },
+      {
+        "initials": "BBB",
+        "name": "Shri Beer Bahadur Bisht",
+        "role": "Organization Secretary",
+        "desc": "Manages organizational structure and membership."
+      },
+      {
+        "initials": "LU",
+        "name": "Shri Lakshman Upadhyay",
+        "role": "Organization Minister",
+        "desc": "Strengthens internal organization and outreach."
+      },
+      {
+        "initials": "CS",
+        "name": "Shri Chandan Singh",
+        "role": "Organization Minister",
+        "desc": "Focuses on expanding the organization's network."
+      },
+      {
+        "initials": "VPK",
+        "name": "Shri Vishnu Prasad Koirala",
+        "role": "Organization Minister",
+        "desc": "Works to unify and strengthen the community."
+      },
+      {
+        "initials": "DS",
+        "name": "Smt. Deepika Sen",
+        "role": "Organization Minister",
+        "desc": "Empowers organizational growth and participation."
+      },
+      {
+        "initials": "NS",
+        "name": "Shri Naveen Shah",
+        "role": "Cultural Minister",
+        "desc": "Leads initiatives to preserve Gorkha culture."
+      },
+      {
+        "initials": "ADS",
+        "name": "Ku. Asha Devi Shah",
+        "role": "Asst. Cultural Minister",
+        "desc": "Assists in organizing cultural events and programs."
+      },
+      {
+        "initials": "JB",
+        "name": "Shri Jham Bahadur",
+        "role": "Office Secretary (Nominated)",
+        "desc": "Handles official documents and office administration."
+      },
+      {
+        "initials": "JNK",
+        "name": "Shri Jeev Narayan Khanal",
+        "role": "Chief Publicity Secretary",
+        "desc": "Manages public relations and campaigns."
+      },
+      {
+        "initials": "RK",
+        "name": "Shri Rahul Khadka",
+        "role": "Auditor",
+        "desc": "Ensures financial transparency and compliance."
+      },
+      {
+        "initials": "GS",
+        "name": "Shri Gaurav Singh",
+        "role": "Media Incharge",
+        "desc": "Handles media relations and digital presence."
+      }
     ]
   },
   "footer": {
