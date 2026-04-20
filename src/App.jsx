@@ -35,6 +35,9 @@ import Contact from "./pages/Contact";
 
 import ScrollToTop from "./components/ScrollToTop";
 
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
+
 function Layout() {
     return (
         <div className="overflow-x-hidden">
@@ -82,6 +85,9 @@ export default function App() {
           {/* Donate & Contact */}
           <Route path="donate" element={<Donate />} />
           <Route path="contact" element={<Contact />} />
+          
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="terms-conditions" element={<TermsConditions />} />
         </Route>
       </Routes>
     </BrowserRouter>

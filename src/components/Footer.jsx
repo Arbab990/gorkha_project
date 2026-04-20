@@ -1,5 +1,6 @@
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -108,13 +109,13 @@ export default function Footer() {
             </a>
           </p>
           <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-white transition-colors">
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy
-            </a>
+            </Link>
             <span className="text-white/40">|</span>
-            <a href="#" className="hover:text-white transition-colors">
+            <Link to="/terms-conditions" className="hover:text-white transition-colors">
               Terms &amp; Conditions
-            </a>
+            </Link>
           </div>
         </div>
       </div>

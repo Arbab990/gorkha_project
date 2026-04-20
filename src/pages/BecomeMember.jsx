@@ -160,38 +160,20 @@ export default function BecomeMember() {
         const payload = buildMembershipPayload({ formData, familyMembers });
 
         try {
-            /*
-             * ─────────────────────────────────────────────────────────
-             * TODO: BACKEND INTEGRATION POINT
-             * ─────────────────────────────────────────────────────────
-             *
-             * Replace the simulated delay below with an actual API call:
-             *
-             * const response = await fetch(API_CONFIG.MEMBERSHIP_ENDPOINT, {
-             *     method: "POST",
-             *     headers: { "Content-Type": "application/json" },
-             *     body: JSON.stringify(payload),
-             * });
-             *
-             * if (!response.ok) {
-             *     const errorData = await response.json();
-             *     throw new Error(errorData.message || "Submission failed");
-             * }
-             *
-             * const data = await response.json();
-             * setReferenceId(data.referenceId);
-             *
-             * ─────────────────────────────────────────────────────────
-             */
+            const response = await fetch("http://localhost:5000/api/memberships", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
 
-            // Simulated API call (remove when backend is ready)
-            await new Promise((resolve) => setTimeout(resolve, 1500));
+            const data = await response.json();
 
-            // Simulated reference ID (replace with actual from backend)
-            const mockRefId = `BGSS-M-${Date.now().toString(36).toUpperCase()}`;
-            setReferenceId(mockRefId);
+            if (!response.ok) {
+                throw new Error(data.message || "Submission failed");
+            }
 
-            console.info("📦 Membership Payload (ready for API):", payload);
+            setReferenceId(data.referenceId);
+            console.info("✅ Membership submitted:", data);
 
             setShowSuccess(true);
         } catch (error) {
@@ -319,7 +301,17 @@ export default function BecomeMember() {
                                         type="tel"
                                         name="mobileNumber"
                                         value={formData.mobileNumber}
-                                        onChange={handleChange}
+                                        onChange={(e) => {
+                                            // Strip all non-digit characters and cap at 10 digits
+                                            const numeric = e.target.value.replace(/\D/g, "").slice(0, 10);
+                                            setFormData((prev) => ({ ...prev, mobileNumber: numeric }));
+                                            if (formErrors.mobileNumber) {
+                                                setFormErrors((prev) => ({ ...prev, mobileNumber: undefined }));
+                                            }
+                                        }}
+                                        inputMode="numeric"
+                                        pattern="[0-9]*"
+                                        maxLength={10}
                                         placeholder={t("becomeMemberPage.mobileNumberPlaceholder")}
                                         className={inputClassName}
                                         required
@@ -369,7 +361,17 @@ export default function BecomeMember() {
                                         type="text"
                                         name="aadhaarNumber"
                                         value={formData.aadhaarNumber}
-                                        onChange={handleChange}
+                                        onChange={(e) => {
+                                            // Strip non-digits and cap at 12 digits
+                                            const numeric = e.target.value.replace(/\D/g, "").slice(0, 12);
+                                            setFormData((prev) => ({ ...prev, aadhaarNumber: numeric }));
+                                            if (formErrors.aadhaarNumber) {
+                                                setFormErrors((prev) => ({ ...prev, aadhaarNumber: undefined }));
+                                            }
+                                        }}
+                                        inputMode="numeric"
+                                        pattern="[0-9]*"
+                                        maxLength={12}
                                         placeholder={t("becomeMemberPage.aadharPlaceholder")}
                                         className={inputClassName}
                                         required
@@ -574,7 +576,7 @@ export default function BecomeMember() {
                                 </p>
                             )}
                             <p className="text-gray-400 text-xs mb-6 leading-relaxed">
-                                No backend is connected yet — this is a UI demonstration. Your application will be processed once the integration is live.
+                                Our team will review your application and contact you shortly regarding the next steps.
                             </p>
                             <motion.button
                                 whileHover={{ scale: 1.03 }}

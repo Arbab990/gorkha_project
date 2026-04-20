@@ -310,7 +310,7 @@
     "age": "Age",
     "memberNamePlaceholder": "Member name",
     "addFamilyMember": "+ Add One More Family Member",
-    "submitBtn": "Submit Membership Form"
+    "submitBtn": "Submit"
   },
   "eventPages": {
     "upcomingEvents": "Upcoming Events",
@@ -490,7 +490,7 @@
     ]
   },
   "footer": {
-    "brandDesc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+    "brandDesc": "Dedicated to the welfare, cultural preservation, and upliftment of the Gorkha community across India.",
     "quickLinks": "Quick Links",
     "otherPages": "Other Pages",
     "contactInfo": "Contact Info",
