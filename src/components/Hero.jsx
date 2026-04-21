@@ -33,17 +33,30 @@ export default function Hero() {
     }, [next]);
 
     const slideVariants = {
-        enter: (dir) => ({ x: dir > 0 ? "100%" : "-100%", opacity: 0 }),
-        center: { x: 0, opacity: 1 },
-        exit: (dir) => ({ x: dir > 0 ? "-100%" : "100%", opacity: 0 }),
+        enter: (dir) => ({ 
+            x: dir > 0 ? "100%" : "-100%", 
+            opacity: 0,
+            zIndex: 1
+        }),
+        center: { 
+            x: 0, 
+            opacity: 1,
+            zIndex: 1
+        },
+        exit: { 
+            x: 0, 
+            opacity: 0,
+            zIndex: 0,
+            transition: { opacity: { duration: 0.4 } }
+        },
     };
 
     return (
         <section
             id="home"
-            className="relative min-h-screen flex items-center justify-center overflow-hidden"
+            className="relative min-h-screen flex items-center justify-center overflow-hidden bg-green-dark"
         >
-            <AnimatePresence initial={false} custom={direction} mode="popLayout">
+            <AnimatePresence initial={false} custom={direction}>
                 <motion.div
                     key={current}
                     custom={direction}
@@ -51,8 +64,11 @@ export default function Hero() {
                     initial="enter"
                     animate="center"
                     exit="exit"
-                    transition={{ duration: 0.8, ease: "easeInOut" }}
-                    className="absolute inset-0 bg-cover bg-no-repeat transition-all duration-700"
+                    transition={{ 
+                        x: { type: "tween", duration: 0.8, ease: "easeInOut" },
+                        opacity: { duration: 0.4 }
+                    }}
+                    className="absolute inset-0 bg-cover bg-no-repeat"
                     style={{
                         backgroundImage: `url('${slides[current].url}')`,
                         backgroundPosition: slides[current].position,
@@ -60,7 +76,7 @@ export default function Hero() {
                 />
             </AnimatePresence>
 
-            <div className="absolute inset-0 bg-green-dark/50" />
+            <div className="absolute inset-0 bg-green-dark/50 z-[5]" />
 
             <div className="relative z-10 text-center max-w-4xl mx-auto px-6 pt-20">
                 <motion.h1
