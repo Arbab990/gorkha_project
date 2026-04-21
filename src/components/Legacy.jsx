@@ -93,8 +93,9 @@ export default function Legacy({ isPage = false }) {
                                         className={`hidden md:flex flex-col items-center justify-end h-20 mb-4 transition-all duration-300 w-full cursor-pointer
                                           ${isActive ? "scale-105" : "opacity-80 group-hover:opacity-100"}`}
                                         initial={{ opacity: 0, y: -10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: idx * 0.05 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true, margin: "100px" }}
+                                        transition={{ duration: 0.3 }}
                                     >
                                         <span className="text-orange font-bold text-[15px] tracking-wider mb-1">{event.year}</span>
                                         <h3 className="font-heading font-bold text-green-dark text-[14px] text-center leading-snug px-1 line-clamp-3">
@@ -112,8 +113,8 @@ export default function Legacy({ isPage = false }) {
                                             whileTap={{ scale: 0.95 }}
                                             initial={{ scale: 0 }}
                                             whileInView={{ scale: 1 }}
-                                            viewport={{ once: true, margin: "0px" }}
-                                            transition={{ type: "spring", stiffness: 200, delay: idx * 0.05 }}
+                                            viewport={{ once: true, margin: "100px" }}
+                                            transition={{ type: "spring", stiffness: 200 }}
                                         >
                                             {icons[idx] || <Flag size={20} />}
                                         </motion.div>
