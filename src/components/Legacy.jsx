@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Users, Landmark, Network, Heart, BookOpen, Flag } from "lucide-react";
 
 const AUTO_PLAY_INTERVAL = 3000;
@@ -11,18 +11,33 @@ export default function Legacy({ isPage = false }) {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
 
+    // Track when the timeline section scrolls into view
+    const sectionRef = useRef(null);
+    const isInView = useInView(sectionRef, { once: false, margin: "0px 0px -100px 0px" });
+
     if (!Array.isArray(events)) return null;
 
     const nextEvent = useCallback(() => {
         setActiveIndex((prev) => (prev + 1) % events.length);
     }, [events.length]);
 
+    // Only run autoplay when the section is visible AND not hovered
     useEffect(() => {
-        if (isPaused) return;
+        if (!isInView || isPaused) return;
 
-        const timer = setInterval(nextEvent, AUTO_PLAY_INTERVAL);
-        return () => clearInterval(timer);
-    }, [nextEvent, isPaused]);
+        let timeoutId;
+        const startCycle = (delay) => {
+            timeoutId = setTimeout(() => {
+                nextEvent();
+                startCycle(AUTO_PLAY_INTERVAL); // regular pace after first tick
+            }, delay);
+        };
+
+        // First move happens quickly (500ms), then every 3s after
+        startCycle(500);
+
+        return () => clearTimeout(timeoutId);
+    }, [nextEvent, isPaused, isInView]);
 
     const icons = [
         <Users size={24} />,
@@ -35,11 +50,12 @@ export default function Legacy({ isPage = false }) {
 
     return (
         <section
+            ref={sectionRef}
             className={`${isPage ? "pt-32 min-h-screen bg-gray-50/50" : "py-24 bg-white"} pb-24 px-6 relative overflow-hidden`}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
         >
-            <div className={`max-w-6xl mx-auto ${isPage ? "mt-12" : ""} mb-16 relative z-10`}>
+            <div className={`max-w-6xl mx-auto ${isPage ? "mt-12" : ""} mb-8 relative z-10`}>
 
                 <div className="text-center mb-16 md:mb-12">
                     {!isPage && (
@@ -74,7 +90,7 @@ export default function Legacy({ isPage = false }) {
                 </div>
 
                 {/* RESPONSIVE TIMELINE WRAPPER */}
-                <div className="relative mb-8 px-2 md:px-10 lg:px-4 pb-6 md:pb-56">
+                <div className="relative mb-8 px-2 md:px-10 lg:px-4 pb-6 md:pb-24">
 
                     {/* Desktop continuous line positioned perfectly behind icons */}
                     <div className="absolute top-[8rem] left-[5%] right-[5%] h-1 bg-gray-200 hidden md:block rounded-full z-0"></div>
@@ -89,35 +105,25 @@ export default function Legacy({ isPage = false }) {
                                 <div key={idx} className="flex flex-row md:flex-col items-start md:items-center group w-full md:flex-1 relative" onClick={() => setActiveIndex(idx)}>
 
                                     {/* Desktop Year & Heading Label (Hidden on mobile) */}
-                                    <motion.div
+                                    <div
                                         className={`hidden md:flex flex-col items-center justify-end h-20 mb-4 transition-all duration-300 w-full cursor-pointer
                                           ${isActive ? "scale-105" : "opacity-80 group-hover:opacity-100"}`}
-                                        initial={{ opacity: 0, y: -10 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true, margin: "100px" }}
-                                        transition={{ duration: 0.3 }}
                                     >
                                         <span className="text-orange font-bold text-[15px] tracking-wider mb-1">{event.year}</span>
                                         <h3 className="font-heading font-bold text-green-dark text-[14px] text-center leading-snug px-1 line-clamp-3">
                                             {event.title}
                                         </h3>
-                                    </motion.div>
+                                    </div>
 
                                     {/* Node Icon Cluster (Both mobile and desktop) */}
                                     <div className="flex items-center cursor-pointer shrink-0 ml-2 md:ml-0 z-10 md:justify-center md:w-auto">
-                                        <motion.div
+                                        <div
                                             className={`w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center border-4 transition-all duration-300 shadow-md bg-white shrink-0
                                                 ${isActive ? "border-orange text-orange scale-110 shadow-orange/20" : "border-gray-200 text-gray-400 group-hover:border-green-dark/30 group-hover:text-green-dark"}
                                             `}
-                                            whileHover={{ scale: isActive ? 1.1 : 1.05 }}
-                                            whileTap={{ scale: 0.95 }}
-                                            initial={{ scale: 0 }}
-                                            whileInView={{ scale: 1 }}
-                                            viewport={{ once: true, margin: "100px" }}
-                                            transition={{ type: "spring", stiffness: 200 }}
                                         >
                                             {icons[idx] || <Flag size={20} />}
-                                        </motion.div>
+                                        </div>
                                     </div>
 
                                     {/* Mobile Only: Inline Content beside the icon */}
