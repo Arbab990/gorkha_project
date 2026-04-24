@@ -52,8 +52,6 @@ export default function Legacy({ isPage = false }) {
         <section
             ref={sectionRef}
             className={`${isPage ? "pt-32 min-h-screen bg-gray-50/50" : "py-24 bg-white"} pb-24 px-6 relative overflow-hidden`}
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
         >
             <div className={`max-w-6xl mx-auto ${isPage ? "mt-12" : ""} mb-8 relative z-10`}>
 
@@ -102,7 +100,11 @@ export default function Legacy({ isPage = false }) {
                         {events.map((event, idx) => {
                             const isActive = activeIndex === idx;
                             return (
-                                <div key={idx} className="flex flex-row md:flex-col items-start md:items-center group w-full md:flex-1 relative" onClick={() => setActiveIndex(idx)}>
+                                <div key={idx} className="flex flex-row md:flex-col items-start md:items-center group w-full md:flex-1 relative"
+                                    onClick={() => setActiveIndex(idx)}
+                                    onMouseEnter={() => setIsPaused(true)}
+                                    onMouseLeave={() => setIsPaused(false)}
+                                >
 
                                     {/* Desktop Year & Heading Label (Hidden on mobile) */}
                                     <div

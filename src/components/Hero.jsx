@@ -4,10 +4,10 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { useTranslation } from "react-i18next";
 
 const slides = [
-    { url: "/images/beautiful-scenery-mountainous-landscape-covered-with-snow-cloudy-sky.jpg", position: "center" },
-    { url: "/images/pexels-micklatter-31540737.jpg", position: "center" },
-    { url: "/images/pexels-micklatter-15519578.jpg", position: "center 20%" },
-    { url: "/images/pexels-prabin-adhikari-1090022431-20651038.jpg", position: "center" },
+    { url: "/images/optimized/beautiful-scenery-mountainous-landscape-covered-with-snow-cloudy-sky.webp", position: "center" },
+    { url: "/images/optimized/pexels-micklatter-31540737.webp", position: "center" },
+    { url: "/images/optimized/pexels-micklatter-15519578.webp", position: "center 20%" },
+    { url: "/images/optimized/pexels-prabin-adhikari-1090022431-20651038.webp", position: "center" },
 ];
 
 const AUTOPLAY_INTERVAL = 5000;
@@ -31,6 +31,14 @@ export default function Hero() {
         const timer = setInterval(next, AUTOPLAY_INTERVAL);
         return () => clearInterval(timer);
     }, [next]);
+
+    // Preload all slide images into browser cache
+    useEffect(() => {
+        slides.forEach((slide) => {
+            const img = new Image();
+            img.src = slide.url;
+        });
+    }, []);
 
     const slideVariants = {
         enter: (dir) => ({ 
